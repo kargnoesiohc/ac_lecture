@@ -76,16 +76,47 @@ public class Test02 {
 //		System.out.println(result);
 		
 		//9.Scanner 클래스 사용, 두 정수 입력받아 최대값 구하기 
-		Scanner scan = new Scanner(System.in);
-		System.out.println("첫 번째 값 입력 : ");
-		int x = scan.nextInt();
-		System.out.println("두 번째 값 입력 : ");
-		int y = scan.nextInt();
-		int result = x > y ? x : y;
+//		Scanner scan = new Scanner(System.in);
+//		System.out.println("첫 번째 값 입력 : ");
+//		int x = scan.nextInt();
+//		System.out.println("두 번째 값 입력 : ");
+//		int y = scan.nextInt();
+//		int result = x > y ? x : y;
+//		
+//		System.out.println("정수 " + x + " 과 정수 " + y + " 중에서 최대 값: " + result);
 		
-		System.out.println("정수 " + x + " 과 정수 " + y + " 중에서 최대 값: " + result);
+		//10. Scanner클래스 사용/ 주소 받아서 도/시/구 이름 출력
+//		Scanner scan = new Scanner(System.in);
+//		System.out.println("주소를 입력하시오.(도/시/구 공백으로 구분)");
+//		String addr1 = scan.next();
+//		String addr2 = scan.next();
+//		String addr3 = scan.next();
+//		System.out.printf("도명: %s \n시명: %s \n구명: %s", addr1,addr2,addr3);
+//		scan.close();
 		
-		//9.
+		//11. Scanner 활용 
+//		Scanner scan = new Scanner(System.in);
+//		System.out.println("주소를 입력하시오.");
+//		String addr = scan.nextLine();
+//		System.out.println(addr);
+//		System.out.println("문자 갯수(공백포함): " + addr.length()); //.length(): 공백을 포함한 문자열 길이 추출
+//		System.out.println("단어 갯수: " + addr.split(" ").length);  // .split(특정 문자열): 특정 문자열을 기준으로 구분
+//		scan.close();
+		
+		//12. mesg 변수에 저장된 "heLLO" 문자열을 사용하여 실행 결과와 같이 처리
+		String mesg = "heLLO";
+		System.out.println("대문자로: "+ mesg.toUpperCase());
+		System.out.println("소문자로: "+ mesg.toLowerCase());
+		System.out.println("1번째 위치 문자: " + mesg.substring(1, 2));
+		System.out.println("문자열 연결: " + mesg + " ~~~");
+		System.out.println("h 문자열 포함 여부: " + mesg.contains("h"));
+		System.out.println("he 문자열 포함 여부: " + mesg.contains("he"));
+		System.out.println("hw 문자열 포함 여부: " + mesg.contains("hw"));
+		System.out.println("h 문자로 끝나는지 여부:" + mesg.endsWith("h"));
+		System.out.println("h 문자로 시작하는지 여부:" + mesg.startsWith("h"));
+		System.out.println("O 문자를 X로 변경: "+ mesg.replace("O", "X"));
+		
+		
 	}
 
 }
