@@ -84,6 +84,8 @@ public class Test02 {
 		int result = x > y ? x : y;
 		
 		System.out.println("정수 " + x + " 과 정수 " + y + " 중에서 최대 값: " + result);
+		
+		//9.
 	}
 
 }
