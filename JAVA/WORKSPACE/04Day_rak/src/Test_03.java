@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Test_03 {
 	public static void main(String[] args) {
@@ -56,5 +57,21 @@ public class Test_03 {
 //				}
 //			}
 //		} 
+			
+		// 7. 1부터 100까지 더하는 프로그램. 단, Scanner로 1자리 정수로 입력 받아 입력 받은 수의 배수만 더한다.
+			Scanner scan = new Scanner(System.in);
+			System.out.println("한 자리 정수 값을 입력하시오.");
+			int sum = 0;
+			int num = scan.nextInt();
+			for(int i=1;i<=100;i++) {
+					if(i%num == 0) { //배수 조건
+							sum += i; //합계
+							if(i!=num) { 
+								System.out.print("+");
+							}
+							System.out.print(i);
+					}
+			}
+			System.out.println("="+ sum);
 	}
 }
