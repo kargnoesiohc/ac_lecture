@@ -105,6 +105,7 @@ public class Test02 {
 		
 		//12. mesg 변수에 저장된 "heLLO" 문자열을 사용하여 실행 결과와 같이 처리
 		String mesg = "heLLO";
+		String mesg2 = new String("heLLO");
 		System.out.println("대문자로: "+ mesg.toUpperCase());
 		System.out.println("소문자로: "+ mesg.toLowerCase());
 		System.out.println("1번째 위치 문자: " + mesg.substring(1, 2));
@@ -115,8 +116,11 @@ public class Test02 {
 		System.out.println("h 문자로 끝나는지 여부:" + mesg.endsWith("h"));
 		System.out.println("h 문자로 시작하는지 여부:" + mesg.startsWith("h"));
 		System.out.println("O 문자를 X로 변경: "+ mesg.replace("O", "X"));
-		
-		
+		//문자열 비교 '==':주소 비교 / '.equals()': 값 비교 
+		//리터럴 String 주소 : string constant pool(공통) / new 연산자 String 주소: Heap(개별)
+		System.out.println("HELLO 문자열인지 비교(리터럴.equals(new)): " + mesg.equals(mesg2));
+		System.out.println("HELLO 문자열인지 주소 비교(리터럴 == new): " + (mesg == mesg2));
+				
 	}
 
 }
