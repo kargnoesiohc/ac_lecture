@@ -11,9 +11,6 @@ public class Arr01 {
 				
 				arr02.arr_search(arr, 40);
 				
-				
-				
-				
 				//최대값, 최소값
 //				int [] score = {32,34,67,22,11,9};
 //				int max = score[0];
