@@ -145,6 +145,19 @@ public class For_Test01 {
 //			}
 //			System.out.println(); //줄 바꿈
 //		}
+			
+			//while로 별찍기
+			int i=1;
+			while(i<=5) {
+					int j=0;
+					while(j<i) {
+							System.out.print("*");
+							j++;
+					}
+					System.out.println();
+					i++;
+			}
+			
 	}
 	
 }
