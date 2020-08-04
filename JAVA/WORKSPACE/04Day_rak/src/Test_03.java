@@ -1,3 +1,4 @@
+import java.io.BufferedReader;
 import java.util.Scanner;
 
 public class Test_03 {
@@ -59,19 +60,56 @@ public class Test_03 {
 //		} 
 			
 		// 7. 1부터 100까지 더하는 프로그램. 단, Scanner로 1자리 정수로 입력 받아 입력 받은 수의 배수만 더한다.
+//			Scanner scan = new Scanner(System.in);
+//			System.out.println("한 자리 정수 값을 입력하시오.");
+//			int sum = 0;
+//			int num = scan.nextInt();
+//			for(int i=1;i<=100;i++) {
+//					if(i%num == 0) { //배수 조건
+//							sum += i; //합계
+//							if(i!=num) { 
+//								System.out.print("+");
+//							}
+//							System.out.print(i);
+//					}
+//			}
+//			System.out.println("="+ sum);
+			// 11. Scanner클래스 사용, 두 정수값, b-a출력. 단, b값이 a값보다 작으면 b를 다시 입력받는다.
+//			Scanner scan = new Scanner(System.in);
+//			System.out.println("정수 a를 입력: ");
+//			int a = scan.nextInt();
+//			int b = scan.nextInt();
+//			while(true) {
+//					if(b<a) {
+//							System.out.println("정수 2개 재입력:\n(첫 번째 정수보다 두번째 정수가 커야함) ");
+//							a = scan.nextInt();
+//							b = scan.nextInt();
+//					} else {
+//							
+//							System.out.println(a+b);
+//							break;
+//					}
+//			}
+			
+			//12. Scanner클래스, 양수 입력바당서 자릿수 출력. 단, 음수 입력시 재입력
 			Scanner scan = new Scanner(System.in);
-			System.out.println("한 자리 정수 값을 입력하시오.");
-			int sum = 0;
-			int num = scan.nextInt();
-			for(int i=1;i<=100;i++) {
-					if(i%num == 0) { //배수 조건
-							sum += i; //합계
-							if(i!=num) { 
-								System.out.print("+");
-							}
-							System.out.print(i);
+			System.out.println("정수 a를 입력: ");
+			int a = scan.nextInt();
+			while(true) {
+					if(a>0) {
+							break;
 					}
+					System.out.println("양의 정수 값 입력");
 			}
-			System.out.println("="+ sum);
+			int i;   
+			System.out.print("a는 ");
+			for(i=1;i<a;i++) {  //소수점이 나올때까지 10으로 나눔 -> 10으로 나눈 횟수가 곧 자릿수
+				if(a>1)
+						a/=10;
+			}
+			System.out.println(i + "자리 입니다.");
+			
+//			int length = (int)Math.log10(a)+1; //Math.log10(double)
+//			System.out.println(a+"는 "+ length + "자리 입니다.");
 	}
 }
