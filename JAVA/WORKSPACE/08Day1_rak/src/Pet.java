@@ -30,7 +30,7 @@ public class Pet {
 		}
 		
 		public String printInfo() {
-				System.out.println("---Pet.printInfo() 호출 ---");
+//				System.out.println("---Pet.printInfo() 호출 ---");
 				return name +"\\"+ age +"\\"+ gender;
 		}
 }
@@ -53,7 +53,7 @@ class Cat extends Pet {
 		@Override  
 		public String printInfo() {		//메소드 오버라이딩 Pet -> Cat
 				// TODO Auto-generated method stub
-				System.out.println("---Cat.printInfo() 호출 ---");
+//				System.out.println("---Cat.printInfo() 호출 ---");
 				return super.printInfo() + "\\"+ weight;
 		}
 		
@@ -81,7 +81,7 @@ class Dog extends Pet {
 		@Override
 		public String printInfo() {  //메소드 오버라이딩 Cat -> Dog
 				// TODO Auto-generated method stub
-				System.out.println("---Dog.printInfo() 호출 ---");
+//				System.out.println("---Dog.printInfo() 호출 ---");
 				return super.printInfo()+"\\"+color;
 		}
 }
@@ -103,7 +103,7 @@ class Fish extends Pet {
 		@Override
 		public String printInfo() { //메소드 오버라이딩 Pet ->Fish
 				// TODO Auto-generated method stub
-				System.out.println("---Fish.printInfo() 호출 ---");
+//				System.out.println("---Fish.printInfo() 호출 ---");
 				return super.printInfo()+"\\"+tailsize;
 		}
 		
