@@ -21,6 +21,7 @@ public class StudentTest {
 				double totalWeight = 0;
 				System.out.println("이름    나이   신장   몸무게");
 				
+				
 				for(int i=0;i<stu.length;i++) {
 						System.out.println(stu[i].studentInfo());
 						totalAge += (double)stu[i].getAge()/stu.length;
@@ -28,7 +29,6 @@ public class StudentTest {
 						totalWeight += (double)stu[i].getWeight()/stu.length;
 						if(stu[maxIdxA].getAge() < stu[i].getAge()) {
 								maxIdxA = i;
-
 						}
 						if(stu[minIdxA].getAge() > stu[i].getAge()) {
 								minIdxA = i;
