@@ -1,4 +1,4 @@
-package practice.For;
+package Lv_03;
 
 import java.util.Scanner;
 
