@@ -1,4 +1,4 @@
-package While;
+package Lv_04;
 
 import java.util.Scanner;
 
