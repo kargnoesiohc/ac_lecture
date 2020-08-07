@@ -12,13 +12,16 @@ public class plusCycle_1110 {
 				// TODO Auto-generated method stub
 				Scanner scan = new Scanner(System.in);
 				
-				int n = 8;
-				if(n>=0  && n<=99) {
-						if(n<10) {
-//								n = Integer.toString("0"+n);
+				int n = scan.nextInt();
+				int copy = n;
+				int count = 0;
+						while (true) {
+								n = (n%10*10)+(((n/10)+(n%10))%10);
+								count++;
+								if(copy == n) {
+										break;
+								}
 						}
-				}
-				System.out.println(n);
+						System.out.println(count);
 		}
-
 }
