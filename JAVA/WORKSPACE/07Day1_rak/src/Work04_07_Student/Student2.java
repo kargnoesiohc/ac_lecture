@@ -15,8 +15,10 @@ public class Student2 {
 				this.height = height;
 				this.weight = weight;
 		}
-		public String stuInfo() {
-			 return name +"\t"+ age +"\t"+ height +"\t"+ weight;
+		
+		@Override
+		public String toString() {
+				return  name +"\t"+ age +"\t"+ height +"\t"+ weight;
 		}
 		public String getName() {
 				return name;
