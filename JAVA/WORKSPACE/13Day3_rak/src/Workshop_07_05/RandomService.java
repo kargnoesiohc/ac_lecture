@@ -1,17 +1,28 @@
 package Workshop_07_05;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public class Method_div {
+public class RandomService {
 		
-		public ArrayList<Integer> addArrayList(ArrayList<Integer> list) {
-				for(int i=0;i<10;i++) {
-						list.add((int)(Math.random()*10));
-				}
-				return list;
+		ArrayList<Integer> list1;
+		ArrayList<Integer> list2;
+		
+		public RandomService() {
+				// TODO Auto-generated constructor stub
+				super();
+				
 		}
 		
-		public void printDiv(ArrayList<Integer> list1, ArrayList<Integer> list2) {
+		public void addArrayList() {
+				
+				for(int i=0;i<10;i++) {
+						list1.add((int)(Math.random()*10));
+						list2.add((int)(Math.random()*10));
+				}
+		}
+		
+		public void printDiv() {
 				// TODO Auto-generated constructor stub
 				int div = 0;
 				for(int i=0;i<10;i++) {
