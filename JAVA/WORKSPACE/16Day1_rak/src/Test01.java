@@ -1,4 +1,4 @@
-package jdbc_Method_divide_test;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -21,7 +21,7 @@ public class Test01 {
 				// TODO Auto-generated constructor stub
 				try {
 						Class.forName(driver);
-						System.out.println("드라이버 로딩 완료");
+						System.out.println("Driver loading");
 						
 				} catch (Exception e) {
 						// TODO Auto-generated catch block
@@ -34,7 +34,7 @@ public class Test01 {
 				String result = null;
 				try {
 						conn = DriverManager.getConnection(url,userid,passwd);
-						System.out.println("db 접속 성공");
+						System.out.println("DB Connect \n");
 						String selectQuery = "Select deptno, dname, loc from dept where deptno=?";
 						pstmt = conn.prepareStatement(selectQuery);
 						pstmt.setInt(1, deptno);
@@ -64,6 +64,7 @@ public class Test01 {
 				int num = 0;
 				try {
 						conn = DriverManager.getConnection(url,userid,passwd);
+						System.out.println("DB Connect \n");
 						String deleteQuery = "delete from dept where deptno = ?";
 						pstmt = conn.prepareStatement(deleteQuery);
 						pstmt.setInt(1, 99);
