@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="lib" path="C:/app/acorn/product/11.2.0/dbhome_1/jdbc/lib/ojdbc6_g.jar"/>
+	<classpathentry kind="lib" path="C:/Users/acorn/Downloads/mybatis-3.5.5.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>

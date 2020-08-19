@@ -84,7 +84,6 @@ public class JdbcTemplate { //드라이버 로딩, db연결, conn리턴, con.clo
     public static void close(ResultSet rs) {
     		try {
 						rs.close();
-						System.out.println("rs close");
 				} catch (Exception e) {
 						// TODO: handle exception
 						e.printStackTrace();

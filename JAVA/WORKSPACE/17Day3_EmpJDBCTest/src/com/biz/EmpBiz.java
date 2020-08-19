@@ -40,7 +40,6 @@ public class EmpBiz {
 			dao.empInsert(conn, empDTO);
 			JdbcTemplate.commit(conn);
 			JdbcTemplate.close(conn);
-
 	}
 	public void empUpdate(EmpDTO empDTO) throws DataNotFoundException, SQLException{
 				conn = JdbcTemplate.getConnection();

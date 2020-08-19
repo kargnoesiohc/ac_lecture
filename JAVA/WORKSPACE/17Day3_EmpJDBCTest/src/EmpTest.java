@@ -12,13 +12,13 @@ public class EmpTest {
 		
 		EmpBiz empBiz = new EmpBiz();
 		
-		try {
-				EmpDTO empDto = new EmpDTO(107,"강호동","인사",0,"20200722",1850,350,40);
-				empBiz.empInsert(empDto);
-		} catch (Exception e) {
-				// TODO: handle exception
-				e.printStackTrace();
-		}
+//		try {
+//				EmpDTO empDto = new EmpDTO(107,"강호동","인사",0,"20200722",1850,350,40);
+//				empBiz.empInsert(empDto);
+//		} catch (Exception e) {
+//				// TODO: handle exception
+//				e.printStackTrace();
+//		}
 		
 		//empDelete
 //		try {
@@ -45,14 +45,14 @@ public class EmpTest {
 //				e.printStackTrace();
 //		}
 		//select
-//		try {
-//				ArrayList<EmpDTO> list = empBiz.selectAllEmp();
-//				for(EmpDTO emp: list) {
-//						System.out.println(emp);
-//				}
-//		} catch (Exception e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//		}
+		try {
+				ArrayList<EmpDTO> list = empBiz.selectAllEmp();
+				for(EmpDTO emp: list) {
+						System.out.println(emp);
+				}
+		} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+		}
 	}//end main
 }//end class

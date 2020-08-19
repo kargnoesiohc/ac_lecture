@@ -17,19 +17,23 @@ public class EmpDAO {
 		
 	public ArrayList<EmpDTO> selectAllEmp(Connection conn) throws SQLException{
 			ArrayList<EmpDTO> list = new ArrayList<>();
+			EmpDTO emp = null;
 			String selectQuery = "select * from emp";
 			pstmt = conn.prepareStatement(selectQuery);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-					EmpDTO emp = new EmpDTO();
-					emp.setEmpno(rs.getInt(1));
-					emp.setEname(rs.getString(2));
-					emp.setJob(rs.getString(3));
-					emp.setMgr(rs.getInt(4));
-					emp.setHiredate(rs.getString(5));
-					emp.setSal(rs.getDouble(6));
-					emp.setComm(rs.getDouble(7));
-					emp.setDeptno(rs.getInt(8));
+//					EmpDTO emp = new EmpDTO();
+//					emp.setEmpno(rs.getInt(1));
+//					emp.setEname(rs.getString(2));
+//					emp.setJob(rs.getString(3));
+//					emp.setMgr(rs.getInt(4));
+//					emp.setHiredate(rs.getString(5));
+//					emp.setSal(rs.getDouble(6));
+//					emp.setComm(rs.getDouble(7));
+//					emp.setDeptno(rs.getInt(8));
+					emp  = new EmpDTO(rs.getInt(1),rs.getString(2),rs.getString(3),
+									rs.getInt(4),rs.getString(5),rs.getDouble(6),
+									rs.getDouble(7),rs.getInt(8));
 					list.add(emp);
 			}
 			JdbcTemplate.close(rs);
