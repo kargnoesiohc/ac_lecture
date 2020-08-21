@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Mapper">
+
+	<select id="multiSelect" parameterType="List" resultType="Dept">
+		select * from dept
+		where deptno in
+		<foreach item="item" index="i" collection="list" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+
+	<update id="updateLoc" parameterType="List">
+		update dept set loc = '제주' where deptno in
+		<foreach item="item" index="i" collection="list" open="("
+			separator="," close=")">
+			#{item}
+		</foreach>
+	</update>
+	
+	<delete id="deleteLoc" parameterType="Dept">
+		delete from dept where deptno in 
+		<foreach item="item" index="i" collection="list" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+	
+	<insert id="insertAll" parameterType="List">
+<!-- 	insert all
+	<foreach item="item" index="i" collection="list">
+	into dept (deptno, dname, loc) values (#{item.deptno}, #{item.dname}, #{item.loc}) 
+	</foreach>
+	select * from dual -->
+	<foreach item="item" index="i" collection="list" open="insert all" close="select * from dual">
+	into dept (deptno, dname, loc) values (#{item.deptno}, #{item.dname}, #{item.loc}) 
+	</foreach>
+	</insert>
+	
+	<select id="selectTopN" resultType="Dept">
+		select * from dept order by 1
+	</select>
+	
+</mapper>

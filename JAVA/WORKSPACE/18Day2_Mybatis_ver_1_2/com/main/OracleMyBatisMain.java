@@ -13,10 +13,10 @@ public class OracleMyBatisMain {
 				OracleMyBatisService service = new OracleMyBatisService();
 
 				// deptSelectAll
-		List<Dept> list = service.deptSelectAll();
-		for(Dept dept:list) {
-				System.out.println(dept);
-		}
+//		List<Dept> list = service.deptSelectAll();
+//		for(Dept dept:list) {
+//				System.out.println(dept);
+//		}
 
 				// deptSelectOne(단수 매개변수)
 //		Dept dept;
@@ -45,12 +45,12 @@ public class OracleMyBatisMain {
 //		service.deptInsert(new Dept(92,"총무","경기"));
 
 				// deptUpdate
-//				try {
-//						service.deptUpdate(new Dept(92, "총무", "서울"));
-//				} catch (Exception e1) {
-//						// TODO Auto-generated catch block
-//						e1.printStackTrace();
-//				}
+				try {
+						service.deptUpdate(new Dept(99, "총무", "서울"));
+				} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+				}
 
 				// deptDelete
 //				try {

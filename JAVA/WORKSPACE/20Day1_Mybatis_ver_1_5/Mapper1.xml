@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Mapper1">
+	
+	<select id="selectDynamicDeptno" parameterType="Dept" resultType="Dept">
+		select * from dept
+		<if test = "deptno != 0">
+			where deptno = #{deptno} <!-- hashmap의 키를 이용한 값을 가져오기 -->
+		</if>
+	</select>
+	
+	<select id="selectDynamicChoose" parameterType="hashmap" resultType="Dept">
+		select * from dept
+		<choose>
+			<when test = "dname != null and loc != null">
+			 	where dname = #{dname} and loc = #{loc}
+			</when>
+			<when test = "dname != null">
+				 where dname = #{dname}
+			</when>
+			<when test = "loc != null">
+				where loc = #{loc}
+			</when>
+			<otherwise>
+				order by deptno
+			</otherwise>
+		</choose>
+	</select>
+</mapper>

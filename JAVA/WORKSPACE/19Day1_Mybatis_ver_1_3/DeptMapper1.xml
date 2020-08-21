@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DeptMapper1">
+
+	<select id="deptSelectAll" resultType="Dept">
+		select * from dept
+	</select>
+	
+	<select id="deptSelectOne" resultType="Dept">
+		select * from dept where deptno = #{deptno}
+	</select>
+	
+	<select id="deptSelectName" parameterType="String" resultType="Dept">
+		select * from dept where dname = #{dname}
+	</select>
+	
+	<select id="deptSelectLoc" parameterType="String" resultType="Dept">
+		select * from dept where loc = #{loc}
+	</select>
+	
+	<select id="deptSelectNameLoc" parameterType="hashmap" resultType="Dept">
+		select * from dept where dname = #{dname} and loc = #{loc}
+	</select>
+	
+	<select id="deptSelectHashMap" parameterType="hashmap" resultType="Dept">
+		select * from dept where deptno between #{deptnoA} and #{deptnoB}
+	</select>
+	
+	<select id="deptSelectByDeptNoIn" parameterType="hashmap" resultType="Dept">
+		select * from dept where deptno in(#{a},#{b},#{c})
+	</select>
+	
+	<select id="deptSelectByDeptnoHashMap" parameterType="int" resultType="hashmap">
+		select * from dept where deptno = #{deptno}
+	</select>
+	
+	
+</mapper>
