@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import com.config.MySqlSessionFactory;
 import com.dao.EmpDAO;
 import com.dto.Dept;
 import com.dto.Emp;

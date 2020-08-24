@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Mapper1">
+	<select id="selectNotAmount" parameterType="DTO" resultType="DTO">
+		select * from store s join product p using(pdno) join factory f using(factno)
+		where f.facloc = #{facloc} and (s.stamount = #{stamount} or s.stamount is null)   
+	</select>
+</mapper>
