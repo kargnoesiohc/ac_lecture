@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="employee">
+	<select id="selectAllEmployee" resultType="hashmap">
+		select empno, ename, dname, loc, sal, to_char(hiredate,'YYYY-MM-DD') hiredate, state from employee
+	</select>
+	
+	<select id="searchList" parameterType="hashmap" resultType="hashmap">
+	   select empno,ename,dname,loc,sal,to_char(hiredate,'YYYY-MM-DD') hiredate,state
+	   from employee
+	   <if test="inputSubMenu == 1">
+	   where empno = #{searchWord}
+	   </if>
+	   <if test="inputSubMenu == 2">
+	   where ename = #{searchWord}
+	   </if>
+	   <if test="inputSubMenu == 3">
+	   where dname = #{searchWord}
+	   </if>
+	   <if test="inputSubMenu == 4">
+	   where loc = #{searchWord}
+	   </if>
+	   <if test="inputSubMenu == 5">
+	   where sal = #{searchWord}
+	   </if> 
+	</select>
+	
+	<select id="createEmployeeNum" resultType="int">
+	  <!-- 사원번호 최대 값을 가져와 +1 한 값을 리턴해줌 , 사원번호가 0인 경우 1로 리턴 -->
+	  select max(empno) from employee
+	</select>
+	
+	<insert id="employeeInsert" parameterType="hashmap">
+	insert into employee (empno, ename, dname, loc, sal, hiredate, state) 
+	values (#{empno}, #{ename}, #{dname}, #{loc}, #{sal}, #{hiredate}, #{state})
+	</insert>
+	
+	<update id="employeeUpdate" parameterType="hashmap" >
+	 update employee set dname = #{dname}
+	 <if test="ename != null">
+	  , ename = #{ename}
+	 </if>
+	 <if test="loc != null">
+	  , loc = #{loc}
+	 </if>
+	 <if test="sal != 0">
+	 , sal = #{sal}
+	 </if>
+	 where empno = #{empno}
+	</update>
+	
+	<delete id="employeeDelete" parameterType="int">
+	 delete from employee where empno = #{empno}
+	</delete>
+	
+	<update id="employeeService" parameterType="hashmap" >
+	 update employee 
+	 <choose>
+	 <when test="inputColumn == 1">
+	 set state = '외출'
+	 </when> 
+	  <when test="inputColumn == 2">
+	 set state = '출장'
+	 </when> 
+	  <when test="inputColumn == 3">
+	  set state = '휴가'
+	 </when> 
+	  <otherwise>
+	 set state =  '근무'
+	 </otherwise> 
+	 </choose> 
+	  where empno = #{empno}
+	</update>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

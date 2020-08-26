@@ -2,6 +2,7 @@ package com.service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -137,5 +138,18 @@ public class OracleMyBatisService {
 						// TODO: handle finally clause
 						session.close();
 				}
+		}
+
+		public List<Map<String, Object>> selectAllHash() {
+				// TODO Auto-generated method stub
+				SqlSession session = MySqlSessionFactory.getSession();
+				try {
+						List<Map<String, Object>> list = dao.selectAllHash(session);
+						return list;
+				} finally {
+						// TODO: handle finally clause
+						session.close();
+				}
+			
 		}
 }

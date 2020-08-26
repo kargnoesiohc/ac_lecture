@@ -3,6 +3,7 @@ package jdbc_Method_divide_test;
 import java.util.ArrayList;
 
 public class TestMain {
+		
 
 		public static void main(String[] args) {
 				Test test = new Test();

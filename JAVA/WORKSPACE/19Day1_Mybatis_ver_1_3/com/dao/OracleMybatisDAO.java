@@ -2,6 +2,7 @@ package com.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -100,6 +101,12 @@ public class OracleMybatisDAO {
 						throw new Exception("찾는 레코드가 없습니다.");
 				}
 				return map;
+		}
+
+		  public List<Map<String, Object>> selectAllHash(SqlSession session) {
+				// TODO Auto-generated method stub
+		  		List<Map<String, Object>> list = session.selectList("selectAllHash");
+				return list;
 		}
 
 		
