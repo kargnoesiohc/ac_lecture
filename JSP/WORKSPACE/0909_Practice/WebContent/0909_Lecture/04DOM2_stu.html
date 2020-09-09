@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html><head><meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
- 
-</script>
+
 </head>
 <body>
 
@@ -17,6 +15,20 @@
  </select>
  <br>
  총가격<input type="text" name="totalPrice" id="totalPrice">
+
+<script type="text/javascript">
+const price = document.querySelector("#price");
+const quantity = document.querySelector("#quantity");
+
+function sum() {
+  document.querySelector('#totalPrice').value = parseInt(price.value) * parseInt(quantity.value);
+  }
+    
+  function init() {
+    quantity.addEventListener('change', sum);
+  }
+  init();
+</script>
 </body>
 </html>
 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+갯수<input type="text" name="quantity"  id="quantity" value="1">
+<button id="up">+</button><button id="down">-</button>
+<script type="text/javascript">
+
+    const input = document.querySelector("#quantity");
+    const btnUp = document.querySelector("#up");
+    const btnDown = document.querySelector("#down");
+    
+        function up(){
+            input.value = ++input.value;
+        }
+    
+        function down() {
+            if(input.value != 1){
+                input.value = --input.value;
+            }
+        }
+    
+        function init() {
+            btnUp.addEventListener('click', up);
+            btnDown.addEventListener('click', down);
+        }
+        init();
+    
+    
+    </script>
+</body>
+</html>
