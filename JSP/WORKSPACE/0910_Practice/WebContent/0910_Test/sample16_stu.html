@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+ 아이디<input type="text" name="userid" id="pUserid">
+ <button class="idCheckBtn">아이디중복</button>
+ <script type="text/javascript">
+  const userid = document.querySelector('#userid');
+  const idCheckBtn = document.querySelector('.idCheckBtn');
+
+  let page;
+  function init() {
+    idCheckBtn.addEventListener('click',() => { page = window.open("childWin2_stu.html","","width=300px, height=300px")});
+  }
+  init();
+
+</script>
+</body>
+</html>

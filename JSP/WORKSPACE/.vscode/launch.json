@@ -8,7 +8,7 @@
       "type": "pwa-chrome",
       "request": "launch",
       "name": "Launch Chrome against localhost",
-      "url": "http://127.0.0.1:5500/0909_Practice/WebContent/0909_Lecture/form.html",
+      "url": "http://127.0.0.1:5500/0910_Practice/WebContent/0910_Lecture/04Event_stu.html",
       "webRoot": "${workspaceFolder}"
     }
   ]

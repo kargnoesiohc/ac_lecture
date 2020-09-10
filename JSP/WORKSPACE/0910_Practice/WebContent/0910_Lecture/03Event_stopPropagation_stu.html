@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//이벤트 버블링 - 하위의 이벤트가 상위로 전파
+//이벤트 캡쳐링 - 상위의 이벤트가 하위로 전파
+    window.onload = function () {
+      const a = document.querySelector('#a'); //부모
+      const b = document.querySelector('#b'); //자식
+
+      a.addEventListener('click', () => console.log("a"));
+      b.addEventListener('click', (e) => {
+       console.log("b");
+       e.stopPropagation();
+      });
+    };
+
+</script>
+</head>
+<body>
+<div id="a" style="background-color: #ff0000">
+   a
+    <div id="b" style="background-color: #00ff00">
+       b
+       
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
