@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form id="myForm">
+    아이디 <input type="text" name="userid" id=""><br>
+    비밀번호 <input type="text" name="passwd" id=""><br>
+    <button id="update">수정</button>
+    <button id="delete">삭제</button>
+    <button id="send">전송</button>
+  </form>
+
+  <script type="text/javascript">
+  const updateBtn = document.querySelector('#update');
+  const deleteBtn = document.querySelector('#delete');
+  const sendBtn = document.querySelector('#send');
+  
+  function update() {
+    console.log("수정");
+    const myForm = document.querySelector('#myForm');
+    myForm.action="update.html";
+  }
+
+  function del() {
+    console.log("삭제");
+    // const myForm = document.querySelector('#myForm');
+    myForm.action="delete.html";
+  }
+  function send() {
+    console.log("전송");
+    const myForm = document.querySelector('#myForm');
+    myForm.action="send.html";
+  }
+
+
+  function init() {
+    updateBtn.addEventListener('click', update);
+    deleteBtn.addEventListener('click', del);
+    sendBtn.addEventListener('click', send);
+  }
+  init();
+  </script>
+</body>
+</html>

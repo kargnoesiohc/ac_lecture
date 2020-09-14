@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+전체선택<input type="checkbox" name="allCheck" id="allCheck" onclick="check(this.checked)"><br>
+<hr>
+사과<input type="checkbox" name="fruits" class="fruits" value="사과"><br>
+수박<input type="checkbox" name="fruits" class="fruits" value="수박"><br>
+바나나<input type="checkbox" name="fruits" class="fruits" value="바나나"><br>
+오렌지<input type="checkbox" name="fruits" class="fruits" value="오렌지"><br>
+<button id="test"> 확인</button>
+<span id="result"> </span>
+<script type="text/javascript">
+
+function check(n) {
+  const fruits = document.querySelectorAll('input[name="fruits"]');
+    for(let i=0;i<fruits.length;i++){
+      console.log(fruits.checked);
+      fruits[i].checked = n;
+    }
+  }
+
+  function view() {
+    const fruits = document.querySelectorAll('.fruits');
+    console.log(fruits);
+    let result = "";
+    for(let i=0;i<fruits.length;i++){
+      if(fruits[i].checked){
+        result += `${fruits[i].value} &nbsp;&nbsp;`;
+      }
+    }
+    document.querySelector('#result').innerHTML = result;
+  }
+  function init() {
+    document.querySelector("#test").addEventListener('click', view);
+  }
+  init();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

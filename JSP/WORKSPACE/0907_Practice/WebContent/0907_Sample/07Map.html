@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+  
+    // Map 저장
+    var myMap = new Map();
+    myMap.set("username", "홍길동");
+    myMap.set("age", 20);
+    myMap.set("address", "서울");
+    myMap.set("address", "제주");
+    
+    console.log("크기", myMap.size);
+    console.log("값얻기", myMap.get("username"),
+    		            myMap.get("age"),
+    		            myMap.get("address"),
+    		            myMap.get("xxx"));
+    
+    //삭제
+    myMap.delete("age");//key이용
+    console.log(myMap);
+    
+    //key만
+    var keys = myMap.keys();
+    for(var key of keys){
+    	console.log(key+" = " + myMap.get(key));
+    }
+    
+    //value만
+    var v = myMap.values();
+    for(var x of v){
+    	console.log(x);
+    }
+    // http://developer.mozilla.org
+    // key와 value모두
+    var en = myMap.entries();
+    for(var [key,value] of en){
+    	console.log(key+" = " + value);
+    }
+    
+    myMap.clear();
+    console.log(myMap);
+    
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

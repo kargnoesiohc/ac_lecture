@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+ 글꼴크기:
+ <select class="selectBox">
+  <option value="16px">16px</option>
+  <option value="32px">32px</option>
+  <option value="40px">40px</option>
+  <option value="56px">56px</option>
+ </select>
+ <div id="result">
+   안녕하세요.
+ </div>
+ <script type="text/javascript">
+  const selectBox = document.querySelector('.selectBox');
+  const result = document.querySelector('#result');
+
+  function sizeChange() {
+    result.style.fontSize = `${selectBox.value}`;
+  }
+  
+  function init() {
+    selectBox.addEventListener('click', sizeChange);
+  }
+  init();
+</script>
+</body>
+</html>

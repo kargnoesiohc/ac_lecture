@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+ 값:<input type="search" name="v1" id="v1">
+  <div id="result">
+ 
+ </div>
+ <script type="text/javascript">
+  const input = document.querySelector('#v1');
+
+  let arr = [];
+  function save() {
+    if(event.keyCode == 13){
+      arr.push(input.value);
+      paint();
+    }
+  }
+
+  function paint() {
+    let str = "";
+      for (let i = 0; i < arr.length; i++) {
+        str = `${arr[i]}<br>`;
+      }
+      document.querySelector('#result').innerHTML += str;
+      input.value = "";
+      input.focus();
+    
+  }
+  
+  function init() {
+    input.addEventListener('keyup', save);
+  }
+  init();
+
+ </script>
+</body>
+</html>
