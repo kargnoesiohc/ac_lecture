@@ -208,3 +208,9 @@
 0:0:0:0:0:0:0:1 - - [15/Sep/2020:18:00:16 +0900] "GET /JSPWorkshop13/member.html HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [15/Sep/2020:18:00:17 +0900] "POST /JSPWorkshop13/EmpAddServlet HTTP/1.1" 200 -
 0:0:0:0:0:0:0:1 - - [15/Sep/2020:18:00:27 +0900] "POST /JSPWorkshop13/EmpAddServlet HTTP/1.1" 200 -
+127.0.0.1 - - [15/Sep/2020:18:02:35 +0900] "GET / HTTP/1.1" 200 11414
+0:0:0:0:0:0:0:1 - - [15/Sep/2020:18:02:35 +0900] "GET /JSPWorkshop13/member.html HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [15/Sep/2020:18:02:36 +0900] "POST /JSPWorkshop13/EmpAddServlet HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [15/Sep/2020:18:02:45 +0900] "POST /JSPWorkshop13/EmpAddServlet HTTP/1.1" 200 99
+0:0:0:0:0:0:0:1 - - [15/Sep/2020:18:02:46 +0900] "POST /JSPWorkshop13/EmpAddServlet HTTP/1.1" 200 99
+0:0:0:0:0:0:0:1 - - [15/Sep/2020:18:02:52 +0900] "GET /JSPWorkshop13/EmpListServlet HTTP/1.1" 200 2486
