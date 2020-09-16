@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ 주민번호<input type="text" id="ssn1" name="ssn1" >-
+ <input type="text" id="ssn2" name="ssn2">
+  <span class="printSSN"></span>
+ <script type="text/javascript">
+    const ssn1 = document.querySelector('#ssn1');
+    const ssn2 = document.querySelector('#ssn2');
+    const printSSN = document.querySelector('.printSSN');
+    
+    function xxx() {
+      if(ssn1.value.length == 6){
+        ssn2.focus();
+      }
+      if(ssn2.value.length >= 7){
+        ssn2.focusout();
+        print();
+      }
+    }
+    function print(){
+      printSSN.innerHTML = `<br> 생년월일 : ${ssn1.value}`;
+    }
+
+    function init() {
+      ssn1.addEventListener('keyup', xxx);
+    }
+    init();
+ </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

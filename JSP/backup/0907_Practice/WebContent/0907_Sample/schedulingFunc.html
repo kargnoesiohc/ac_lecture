@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+  // 자바스크립트에서 제공하는 유틸리티 함수
+  
+  //1. 경고창
+    function x(){
+	  alert("x 함수 호출");
+    }
+    
+  //2. 타이머 
+  // 가. 일정시간에 함수를 단 한번 실행
+   function x2(){
+	  
+	  setTimeout(function(){
+		   console.log("3초후에 출력");
+	  },3000);
+  }
+  
+  //나. 일정시간마다 반복해서 실행
+  var interval;
+   function x3(){
+	   interval =  setInterval(function(){
+		   console.log("3초후에 출력");
+	  },3000);
+  }
+   function stop(){
+	   clearInterval(interval);
+   }
+  
+   //3. 문자열을 숫자로 
+    var k = "123";
+    console.log(k+100);
+    
+    var k2 = parseInt(k);
+    console.log(k2+100);
+    
+    var w = "123.23";
+    console.log(w+100.66);
+    
+    var w2 = parseFloat(k);
+    console.log(w2+100.66);
+    
+   
+</script>
+</head>
+<body>
+<button onclick="x()">x 클릭</button>
+<button onclick="x2();">x2 클릭</button>
+<button onclick="x3();">x3 클릭</button>
+<button onclick="stop();">중지</button>
+</body>
+</html>

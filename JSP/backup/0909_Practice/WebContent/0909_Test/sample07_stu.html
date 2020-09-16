@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<button class="btnNum5">5</button>
+<button class="btnNum10">10</button>
+<button class="btnNum15">15</button><br>
+총합:<span id="result"></span>
+<script type="text/javascript">
+  const btnNum5 = document.querySelector('.btnNum5');
+  const btnNum10 = document.querySelector('.btnNum10');
+  const btnNum15 = document.querySelector('.btnNum15');
+
+  function sumFive() {
+    let sum = 0;
+    for(let i=1;i<=5;i++){
+      sum += i;
+    }
+    document.querySelector('#result').innerHTML = sum;
+  }
+
+  function sumTen() {
+    let sum = 0;
+    for(let i=1;i<=10;i++){
+      sum += i;
+    }
+    document.querySelector('#result').innerHTML = sum;
+  }
+
+  function sumFifteen() {
+    let sum = 0;
+    for(let i=1;i<=15;i++){
+      sum += i;
+    }
+    document.querySelector('#result').innerHTML = sum;
+  }
+  function init() {
+    btnNum5.addEventListener('click', sumFive);
+    btnNum10.addEventListener('click', sumTen);
+    btnNum15.addEventListener('click', sumFifteen);
+  }
+  init();
+</script>
+</body>
+</html>
