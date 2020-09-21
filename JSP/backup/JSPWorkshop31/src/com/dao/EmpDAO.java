@@ -14,5 +14,14 @@ public class EmpDAO {
 		System.out.println("레코드 개수 -> "+list.size()+"개");
 		return list;
 	}
+	
+	public int insertEmp(SqlSession session, EmpDTO emp) {
+		System.out.println("1");
+		System.out.println(emp);
+		int num = session.insert("insertEmp", emp);
+		System.out.println("2");
+		return num;
+		
+	}
 
 }

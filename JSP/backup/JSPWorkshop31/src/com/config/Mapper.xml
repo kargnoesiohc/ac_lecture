@@ -15,7 +15,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from emp
 		order by empno, deptno
 	</select>
-
+	
+	<insert id="insertEmp" parameterType="EmpDTO">
+		insert into emp(empno, ename, job, mgr, hiredate, sal, comm, deptno)
+		values (#{empno}, #{ename}, #{job}, #{mgr}, sysdate, #{sal},0,20)
+	</insert>
 </mapper>
 
 

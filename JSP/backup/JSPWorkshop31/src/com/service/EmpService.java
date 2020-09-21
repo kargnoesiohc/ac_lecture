@@ -30,6 +30,19 @@ public class EmpService {
 		} 
 		
 		return list;
+	}
+	
+	public int insertEmp(EmpDTO dto) {
+		SqlSession session = MySqlSessionFactory.getSession();
+		int num;
+		try {
+			num = dao.insertEmp(session, dto);
+			session.commit();
+		} finally {
+			// TODO: handle finally clause
+			session.close();
+		}
 		
+		return num;
 	}
 }
