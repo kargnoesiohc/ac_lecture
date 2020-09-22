@@ -19,21 +19,36 @@
 <title>Insert title here</title>
 
 <script type="text/javascript">
-//전체 총액 구현부분
+
+window.onload =  function() {
+  totalSum();
+}
+
+
 function chk(n) {
-	//전체선택구현
+	var lang= document.querySelectorAll(".delCheck");
+	for(var i=0; i< lang.length; i++){
+		lang[i].checked= n.checked;
+	}
 }
 function delAll() {
-	document.querySelector("#delForm").action='deleteAllProduct.jsp';
-	document.querySelector("#delForm").submit;
+	document.querySelector("Form").action='deleteAllProduct.jsp';
+	
 }
 function delProduct(n) {
+	console.log(n);
 	event.preventDefault();
+	//location.href="test.html";
 	location.href="deleteProduct.jsp?prodId="+n;	
 }
-function update(n){
-	//UPDATE 구현	
+function updateProduct(n){
+	
+	event.preventDefault();
+	var m = document.querySelector("#quantity"+n);//제품 번호에 해당하는 수량 태그 id지정
+	var quantity = m.value;
+	location.href="updateProduct.jsp?prodId="+ n+"&quantity="+quantity;
 }
+
 
 </script>
 </head>
@@ -63,21 +78,27 @@ function update(n){
     <td><%= dto.getPrice()%></td>
     <td><input type="text" name="quantity" value="<%= dto.getQuantity()%>" id="quantity<%= dto.getProdId()%>"></td>
     <td><span class="sum" id="sum<%= dto.getProdId()%>"><%= dto.getQuantity()*dto.getPrice()%></span></td>
-    <td><button id="<%= dto.getProdId()%>" class="deleteProduct">삭제</button></td>
+    <td><button onclick="delProduct('<%= dto.getProdId()%>')">삭제</button></td>
    <%--  <td><button data-id="<%= dto.getProdId()%>" class="updateProduct">수정</button></td> --%>
-   <td><button onclick="update(<%=dto.getProdId()%> )">수정</button></td>
+    <td><button onclick="updateProduct('<%=dto.getProdId()%>')">수정 </button></td>
   </tr>
  <%
    }
  %> 
 </table>
-<button id="deleteAllProduct">선택된 항목 삭제</button>
+<button id="deleteAllProduct" onclick="delAll()">선택된 항목 삭제</button>
  총합:<span id="totalSum"></span>
 </form>
 <script type="text/javascript">
 function totalSum(){
-
-	
+  const arr = document.querySelectorAll('.sum');
+  const span = document.querySelector('#totalSum');
+  let sumVal;
+  arr.forEach(i => {
+    sumVal += i.value;
+    console.log(i.value);
+  });
+  span.innerHTML = sumVal;
 	//CLASS SUM의 총액을 구함, TOTALSUM에 출력
 }
 </script>

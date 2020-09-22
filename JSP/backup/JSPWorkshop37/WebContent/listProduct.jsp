@@ -73,10 +73,7 @@ function updateProduct(n){
     <td><%= dto.getProdName() %></td>
     <td><%= dto.getPrice() %></td>
     <td><input type="text" name="quantity" value="<%= dto.getQuantity() %>" id="quantity<%=dto.getProdId() %>"></td>
-   
     <td><button onclick="delProduct('<%= dto.getProdId()%>')">삭제</button></td>
-  
-   
     <td><button onclick="updateProduct('<%=dto.getProdId()%>')">수정 </button></td>
     <td id="sum"></td>
   </tr>
