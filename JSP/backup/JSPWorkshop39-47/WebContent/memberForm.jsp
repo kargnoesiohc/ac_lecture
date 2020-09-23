@@ -64,6 +64,9 @@
 
 		</table>
 	</form>
-		<a href="EmpListServlet">목록보기</a>&nbsp;
+	<!-- <a href="EmpListServlet">목록보기</a>&nbsp; -->
+	<button class="listBtn">목록보기</button>
+	<script src="list.js" type="text/javascript"></script>
+	
 </body>
 </html>

@@ -1,3 +1,4 @@
+<%@page import="com.dto.PageDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.dto.EmpDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -13,19 +14,24 @@
 	<b>[ 사원 목록 ]</b>
 	<hr></hr>
 	<%
-	List<EmpDTO> list = (List<EmpDTO>) request.getAttribute("list");
+	PageDTO pDTO = (PageDTO) request.getAttribute("pDTO");
+	List<EmpDTO> list = pDTO.getList();
+	String order = (String)request.getAttribute("order");
+	String searchName = (String)request.getAttribute("searchName");
+	String searchValue = (String)request.getAttribute("searchValue");
 	%>
 	<table border="1">
 
 		<!-- 검색기능 -->
 		<tr>
 			<td colspan="5">
-				<form action="EmpSearchServlet">
+				<form action="EmpListServlet">
 					<select name="searchName">
 						<option value="hiredate">입사일(년도만)</option>
 						<option value="ename">이름</option>
-					</select> <input type="text" name="searchValue"> <input
-						type="submit" value="검색">
+					</select> 
+					<input type="text" name="searchValue"> 
+					<input type="submit" value="검색">
 				</form>
 			</td>
 		</tr>
@@ -35,8 +41,8 @@
 			<th>정렬기준</th>
 			<td colspan="4">
 			  <form action="EmpOrderServlet">
-			      월급 높은 순 : <input type="radio" name="order" value="desc" checked="checked" />
-				 월급낮은 순 : <input type="radio" name="order" value="asc" />
+			      월급 높은 순 : <input type="radio" name="order" value="desc" <% if("desc".equals(order) || order == null) { %> checked="checked" <% } %>/>
+				 월급낮은 순 : <input type="radio" name="order" value="asc" <% if("asc".equals(order)){ %> checked="checked"<% } %>/>
 				  <input type="submit" value="정렬">
                </form>
 			</td>
@@ -66,11 +72,34 @@
 			<td><%=hiredate%></td>
 			<td><%=sal%></td>
 		</tr>
+		
 		<%
 			} //end for
+			
+			int curPage = pDTO.getCurPage();
+			int perPage = pDTO.getPerPage();
+			int totalCount = pDTO.getTotalCount();
+			int totalPage = totalCount/perPage;
+			if(totalCount%perPage != 0) totalPage++;
 		%>
+			<tr>
+			<td colspan="5">
+		<%
+			for(int i=1;i<=totalPage;i++){
+				if(i == curPage){
+					out.print(i+"&nbsp;");
+				} else {
+					out.print("<a href='EmpListServlet?curPage="+i+"&searchName="+searchName+"&searchValue="+searchValue+"'>"+i+"</a>&nbsp;");
+				}
+			}
+		%>
+		
+			</td>
+		</tr>
 	</table>
 	<!-- MVC패턴을 위해 Servlet으로 감 -->
-	<a href="EmpWriteFormServlet">사원등록</a>
+	<!-- <a href="EmpWriteFormServlet">사원등록</a> -->
+	<button class="addBtn">사원등록</button>
+	<script src="list.js" type="text/javascript"></script>
 </body>
 </html>

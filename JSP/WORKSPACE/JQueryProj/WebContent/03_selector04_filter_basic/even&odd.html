@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
+</head>
+<body>
+  <table border="1">
+    <tr>
+      <td>인덱스 0</td>
+    </tr>
+    <tr>
+      <td>인덱스 1</td>
+    </tr>
+    <tr>
+      <td>인덱스 2</td>
+    </tr>
+    <tr>
+      <td>인덱스 3</td>
+    </tr>
+  </table>
+  <script type="text/javascript">
+  //짝수, 홀수 번째 해당하는 요소를 반환
+  //실제 짝수 번째가 아닌 index의 값으로 처리(0부터)
+    $("tr:even").css("background-color", "#bbf");
+    $("tr:odd").css({'font-size':'24px'});
+  </script>
+</body>
+</html>

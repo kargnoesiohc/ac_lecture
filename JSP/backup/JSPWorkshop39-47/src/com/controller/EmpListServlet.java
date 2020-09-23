@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.dao.EmpDAO;
 import com.dto.EmpDTO;
+import com.dto.PageDTO;
 import com.service.EmpService;
 
 /**
@@ -24,11 +25,18 @@ public class EmpListServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				
-		EmpService service = new EmpService();
-		List<EmpDTO> list = service.select();
 		
-		request.setAttribute("list", list);
-		System.out.println("레코드 갯수 : " + list.size());
+		String searchName = request.getParameter("searchName");
+		String searchValue = request.getParameter("searchValue");
+		String curPage = request.getParameter("curPage");
+		if(curPage == null) curPage = "1";
+		
+		EmpService service = new EmpService();
+		PageDTO pDTO = service.select(searchName, searchValue,Integer.parseInt(curPage));
+		
+		request.setAttribute("pDTO", pDTO);
+		request.setAttribute("searchName", searchName);
+		request.setAttribute("searchValue", searchValue);
 		
 		
 		//RequsetDispatcher

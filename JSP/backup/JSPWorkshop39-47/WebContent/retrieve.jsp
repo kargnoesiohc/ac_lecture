@@ -64,7 +64,11 @@
 			</tr>
 		</table>
 	</form>
-		<a href="EmpListServlet">목록보기</a>&nbsp;
-		<a href="EmpDeleteServlet?empno=<%=empno %>">삭제</a>
+		<button class="listBtn">목록보기</button>
+		<button class="delBtn" value="<%=empno%>">삭제</button>
+		
+		<!-- <a href="EmpListServlet">목록보기</a>&nbsp; -->
+		<%-- <a href="EmpDeleteServlet?empno=<%=empno %>">삭제</a> --%>
+		<script src="list.js" type="text/javascript"></script>
 </body>
 </html>
