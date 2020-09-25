@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+				const value = $("textarea");
+				const result = $("#result");
+				value.on("keyup", function () {
+					if(value.val().length == 0) {
+						result.html(null);
+					} else {
+						result.html(value.val().length);
+					}
+				})
+ 	   
+ 	});
+</script>
+</head>
+<body>
+글자수 세기<br>
+<textarea rows="10" cols="10"></textarea><br>
+입력문자수:<span id="result"></span>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("form input").css("border","2px dotted blue");
+      $("form fieldset input").css("background-color", "yellow");
+    })
+  </script>
+</head>
+<body>
+  <form>
+    기본 폼
+    <div>기본 폼의 div</div>
+    <label for="name">기본 폼의 자식</label>
+    <input type="text" name="name" id="name">
+    <fieldset>
+      <label for="newsletter">기본 폼의 자손, 필드셋의 자식</label>
+      <input type="text" name="newsletter" id="newsletter">
+    </fieldset>
+  </form>
+  기본 폼의 형제: <input type="text" name="none">
+</body>
+</html>

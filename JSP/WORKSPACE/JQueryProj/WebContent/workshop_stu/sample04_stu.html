@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+      //이미지 정보를 배열에 저장하여 관리
+      const arr = ["a.jpg","b.jpg", "c.jpg"];
+      let i=0;
+      $(document).ready(function() {
+
+    	$("#prev").on("click", function () {
+        if(i>0){
+          i--;
+          console.log(i);
+          $("img").attr("src",arr[i]);
+          $("#result").text(arr[i]);
+        }
+      });
+
+      $("#next").on("click", function () {
+        if(i<arr.length-1){
+          i++;
+          console.log(i);
+          $("img").attr("src",arr[i]);
+          $("#result").text(arr[i]);
+        }
+      });
+    });
+</script>
+</head>
+<body>
+이미지 변경하기<br>
+<img src="a.jpg" width="100" height="100" id="my">
+<button id="prev">이전</button><button id="next">다음</button><br>
+이미지 파일명:<span id="result">a.jpg</span>
+</body>
+</html>
