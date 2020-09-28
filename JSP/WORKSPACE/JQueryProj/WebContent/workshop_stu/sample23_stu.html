@@ -11,6 +11,7 @@
 	 	$("#ssn1").on("keyup", function () {
 			 if($("#ssn1").val().length == 6) {
 				 $("#ssn2").focus();
+				 $("#ssn1").attr("readonly", true);
 			 }
 		 })
 
