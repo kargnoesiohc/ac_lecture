@@ -8,10 +8,13 @@
       
       $(document).ready(function() {
           
-  		/*
-		  코드 구현
-		
-		*/
+  		$("button").on("click", function () {
+				let sum=0;
+				for(i=1;i<=$(this).text();i++){
+					sum += i;
+				}
+				$("#result").text(sum);
+			})
     	   
     	});
 </script>

@@ -9,20 +9,19 @@
 
 
   $(document).ready(function() {
-	 	/*
-	  코드 구현
-	
-	*/
+	 	$("select").on("change", function () {
+       $("#result").css("font-size", $("select").val());
+     })
 	});
 </script>
 </head>
 <body>
  글꼴크기:
  <select>
-  <option>16px</option>
-  <option>32px</option>
-  <option>40px</option>
-  <option>56px</option>
+  <option value="16px">16px</option>
+  <option value="32px">32px</option>
+  <option value="40px">40px</option>
+  <option value="56px">56px</option>
  </select>
  <div id="result">
    안녕하세요.

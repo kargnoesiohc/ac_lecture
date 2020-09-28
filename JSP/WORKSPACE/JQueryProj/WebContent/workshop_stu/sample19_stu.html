@@ -10,10 +10,16 @@
    
    var arr = [];  
     $(document).ready(function() {
-	 	/*
-	   코드 구현
-
-	 */
+      const input = $("#v1");
+      input.on("keyup", function () {
+        if(event.keyCode == 13){
+          arr += $("#v1").val()+"<br>";
+			    $("#result").html(arr);
+			    $("#v1").val("");
+			    $("#v1").focus();
+        }
+			 
+		 })
   });
 </script>
 </head>

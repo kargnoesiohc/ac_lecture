@@ -7,13 +7,14 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 
- $(document).ready(function() {
-
-     /*
- 	   코드 구현
-
- 	  */
-});
+	$(document).ready(function() {
+		$("#userid").val($(opener.document).find("#userid").val());
+		$("#a").on("click", function () {
+			// $(opener.document).find("#userid").val($("#userid").val());
+			opener.$("#userid").val($("#userid").val());
+			close();
+		})
+	});
 </script>
 </head>
 <body>

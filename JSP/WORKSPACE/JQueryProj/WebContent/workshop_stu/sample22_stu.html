@@ -8,10 +8,15 @@
 <script type="text/javascript">
 $(document).ready(function() {
 
- 	/*
-	   코드 구현
+ $("#sum").on("click", function () {
+	 let total = 0;
+	 $("li:odd").each((i, item) => {
+		 $(item).css({"font-size": "30px", "color" : "red"});
+		 total += Number($(item).text());
+	})
+	$("#result").text(total);
 
-	 */
+ })
 	
 });
 </script>

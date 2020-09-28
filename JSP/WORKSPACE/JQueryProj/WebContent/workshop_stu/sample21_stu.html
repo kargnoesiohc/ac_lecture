@@ -8,10 +8,17 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
- 	/*
-	   코드 구현
-
-	 */
+	let total = 0;
+	$("#sum").on("click", function () {
+		// $("li").each((i, item) => {
+		// 	total += Number($(item).text());
+		//  });
+		$.each($("li"), (i, item) => {
+			total += Number($(item).text());
+		})
+		 $("#result").text(total);
+	});
+ 
 });
 </script>
 </head>

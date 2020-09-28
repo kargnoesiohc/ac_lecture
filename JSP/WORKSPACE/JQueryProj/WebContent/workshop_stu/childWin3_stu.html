@@ -8,10 +8,9 @@
 <script>
 
  function post(postNum,addr){
-     /*
- 	   코드 구현
-
- 	  */
+     $(opener.document).find("#post").val(postNum);
+     $(opener.document).find("#address").val(addr);
+     close();
  }
 
 </script>

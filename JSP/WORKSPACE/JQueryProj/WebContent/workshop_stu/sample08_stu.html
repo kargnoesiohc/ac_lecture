@@ -7,19 +7,20 @@
 <script type="text/javascript">
 
     $(document).ready(function() {
-        
-    	/*
-		  코드 구현
-		
-		*/
-  	   
+			$("#passwd2").on("keyup", function () {
+				 if( $("#passwd2").val() == $("#passwd1").val()) {
+					$("#result").text("비밀번호 일치");
+				 } else {
+				  $("#result").text("비밀번호 불일치");
+			 }
+			 }) 
   	});
 </script>
 </head>
 <body>
  비밀번호 확인 구현<br>
- 비밀번호<input type="text" name="passwd" id="passwd"><br>
- 비밀번호 재확인<input type="text" name="passwd1" id="passwd1">
+ 비밀번호<input type="password" name="passwd" id="passwd1"><br>
+ 비밀번호 재확인<input type="password" name="passwd1" id="passwd2">
  <span id='result'></span>
 </body>
 </html>

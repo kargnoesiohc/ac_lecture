@@ -8,11 +8,9 @@
 
 
      $(document).ready(function() {
-         
-    		/*
-		  코드 구현
-		
-		*/
+         $("img").on("mouseover",function () {
+					 $("#result").html(`<h1>${$(this).attr("src")}</h1>`);
+				 })
    	   
    	});
 </script>

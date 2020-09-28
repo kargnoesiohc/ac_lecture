@@ -7,12 +7,14 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 
-   var arr = [];  
+	 var arr = [];  
    $(document).ready(function() {
-	 	/*
-	   코드 구현
-
-	 */
+	 	$("button").on("click", function () {
+			 arr += $("#v1").val()+"<br>";
+			 $("#result").html(arr);
+			 $("#v1").val("");
+			 $("#v1").focus();
+		 })
    });
    
 </script>

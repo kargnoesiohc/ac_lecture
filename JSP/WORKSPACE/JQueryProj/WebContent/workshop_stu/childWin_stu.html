@@ -9,10 +9,13 @@
 
  $(document).ready(function() {
 
-     /*
- 	   코드 구현
-
- 	  */
+     $("#a").on("click", function () {
+			 window.close();
+		 });
+		 $("#b").on("click", function () {
+			 console.log("Aaa");
+			 opener.close();
+		 });
 
 	});
 </script>
