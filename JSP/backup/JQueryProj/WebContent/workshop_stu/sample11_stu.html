@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	const upBtn = $("#up");
+	const downBtn = $("#down");
+	const result = $("#result");
+	let size = 16;
+	upBtn.on("click", function () {
+		size += 4;
+		console.log(size);
+		result.css("font-size", `${size}px`);
+	})
+	
+	downBtn.on("click", function () {
+		size -= 4;
+		if(size <= 4) size = 4;
+		
+		console.log(size);
+		result.css("font-size", `${size}px`);
+	})
+});
+
+</script>
+<body>
+	<button id="up">+</button>
+	<button id="down">-</button>
+	<div id="result">안녕하세요.</div>
+</body>
+</html>

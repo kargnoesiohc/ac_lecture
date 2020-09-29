@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ShopMinimall_02_passwd">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="java-output-path" value="/ShopMinimall_02_passwd/build/classes"/>
+        <property name="context-root" value="ShopMinimall_02_passwd"/>
+    </wb-module>
+</project-modules>

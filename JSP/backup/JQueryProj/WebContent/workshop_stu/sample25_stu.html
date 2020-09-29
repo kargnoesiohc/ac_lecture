@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+   
+    $(document).ready(function(){
+     
+      $("#xxx").on("click", getData);
+
+      function getData() {
+          $.ajax({
+              type:"get",
+              url:"broadcast.jsp",
+              dataType: "xml",
+              success: function (data, status, xhr) {
+                  let mesg = "<table border='1'>";
+                      mesg += "<tr>";
+                      mesg += "<th>term</th><th>part</th><th>mes</th>";
+                      mesg += "</tr>";
+                  
+                  $(data).find("entry").each(function () {
+                      let entry = $(this).attr("term");
+                      let part = $(this).attr("part");
+                      let mes = $(this).find("mes");
+                      mesg += "<tr>";
+                      mesg +=`<td>${entry}</td><td>${part}</td><td>${mes.text()}</td>`;
+                      mesg += "</tr>";
+                  });
+                      mesg += "</table>";
+                      $("#result").html(mesg);
+              },
+              error: function (xhr, status, e) {
+                  
+              }
+          });
+      }
+
+    });
+    
+
+</script>
+</head>
+<body>
+
+<button id="xxx">XML</button>
+<div id="result"></div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

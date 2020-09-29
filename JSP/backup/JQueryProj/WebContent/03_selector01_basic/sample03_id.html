@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>전체태그 : *</title>
+<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+$(function () {
+  $("#a2").css("color","red");
+  const a2 = $("#a2");
+  console.log(a2);
+  console.log($("#b").innerText); //undefined
+  console.log($("#c").text());// text() == innerText
+  console.log($("#a").html());// html() == innerHTML
+  console.log($("#a").text())
+  $("#b").text("XXXXXXX");
+})
+</script>
+</head>
+<body>
+<p id="a"><span>Hello</span></p>
+<p id="a2">Hello2</p>
+<div id="b">World</div>
+<span id="c">test</span>
+</body>
+</html>

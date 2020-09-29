@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
+</head>
+<body>
+  <table border="1">
+    <tr>
+      <td>td#0</td>
+      <td>td#1</td>
+      <td>td#2</td>
+    </tr>
+    <tr>
+      <td>td#3</td>
+      <td>td#4</td>
+      <td>td#5</td>
+    </tr>
+    <tr>
+      <td>td#6</td>
+      <td>td#7</td>
+      <td>td#8</td>
+    </tr>
+  </table>
+  <script type="text/javascript">
+  //지정된 index보다 큰 요소(greater - gt) 및 작은 요소(little - lt) 반환
+  //음수 값 지정 가능
+    $("td:gt(4)").css({'background-color':'green'});
+    $("td:lt(-2)").text("gt(-2)");
+  </script>
+</body>
+</html>
