@@ -1,4 +1,0 @@
-127.0.0.1 - - [23/Sep/2020:11:00:29 +0900] "GET / HTTP/1.1" 200 11414
-0:0:0:0:0:0:0:1 - - [23/Sep/2020:11:00:30 +0900] "GET /JQueryProj/01_basic/DOMReady.html HTTP/1.1" 200 425
-0:0:0:0:0:0:0:1 - - [23/Sep/2020:11:00:30 +0900] "GET /JQueryProj/jquery-3.5.1.min.js HTTP/1.1" 200 89476
-0:0:0:0:0:0:0:1 - - [23/Sep/2020:11:00:54 +0900] "GET /JQueryProj/02_ready/DOMReady.html HTTP/1.1" 200 425
