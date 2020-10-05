@@ -5,11 +5,51 @@
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-    	//form 서브밋
-//id, 패스워드공백확인
-//비번확인
-//passwd2, passwd일치확인	
-//이메일 선택
+    	//form 입력 확인
+        $("form").on("submit", function () {
+            if($("#userid").val().length == 0) {
+                event.preventDefault();
+                $("#userid").focus();
+                alert("아이디 입력 확인");
+            } else if ($("#passwd").val().length == 0 || $("#passwd2").val().length == 0){
+                event.preventDefault();
+                alert("비밀번호 입력 확인");
+            }
+        });//end	
+   	
+   	//비밀번호 일치 불일치 확인
+       $("#passwd2").on("keyup", function () {
+           if($("#passwd").val() == $("#passwd2").val()){
+               $("#passwd2Span").text("비밀번호 일치");
+           } else {
+           	$("#passwd2Span").text("비밀번호 불일치");
+           	
+           	
+           }
+       });//end
+		
+      	//이메일 선택 입력
+      	$("#email").on("change", function() {
+      		$("input[name=email2]").val($("#email").val());
+      	}); //end
+      	
+      	//아이디 중복 체크 
+      	$("#userid").on("keyup", function() {
+      		$.ajax({
+      			type: "GET",
+      			url: "MemberIdCheckServlet",
+      			dataType: "text",
+      			data: {
+      				userid: $("#userid").val(),
+      			},
+      			success: function (data, status, xhr) {
+					$("#result").text(data);
+				},
+				error: function (xhr, status, error) {
+					console.log("error");
+				}
+      		});
+      	});// end
 
 
  });
