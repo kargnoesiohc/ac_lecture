@@ -27,4 +27,17 @@ public class GoodsService {
 		}
 		return list;
 	}
+	public GoodsDTO goodsRetrieve(String gCode) {
+		// TODO Auto-generated method stub
+		SqlSession session = MySqlSessionFactory.getSession();
+		GoodsDTO dto = null;
+		try {
+			dto = dao.goodsRetrieve(session, gCode);
+		} finally {
+			// TODO: handle finally clause
+			session.close();
+		}
+				
+		return dto;
+	}
 }

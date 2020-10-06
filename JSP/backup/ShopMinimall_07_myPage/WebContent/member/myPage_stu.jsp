@@ -2,15 +2,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
-    	//form 서브밋
-//id, 패스워드공백확인
-//비번확인
-//passwd2, passwd일치확인	
-//이메일 선택
-
+      	//이메일 선택 입력
+      	$("#emailSelect").on("change", function() {
+      		$("#email2").val($("#emailSelect").val());
+      	}); //end
 
  });
 </script>    
@@ -29,7 +27,7 @@
   String email2 = dto.getEmail2();
   
 %>
-<form action="MemberAddServlet" method="get">
+<form action="MemberUpdateServlet" method="post">
 *아이디: <%=userid  %><br>
 <br> 
 *이름:<%=username  %>
@@ -56,8 +54,7 @@
         <option value="naver.com" <%if("naver.com".equals(email2)){ %>selected<%} %>>naver.com</option>
        </select>
 <br>
-<input type="submit" value="회원가입">
-<input type="reset" value="취소">
+<input type="submit" value="회원정보 수정">
 </form>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>

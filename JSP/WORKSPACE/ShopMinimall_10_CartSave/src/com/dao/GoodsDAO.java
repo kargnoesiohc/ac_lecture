@@ -14,4 +14,10 @@ public class GoodsDAO {
 		return list;
 	}
 
+	public GoodsDTO goodsRetrieve(SqlSession session, String gCode) {
+		// TODO Auto-generated method stub
+		GoodsDTO dto = session.selectOne("goodsRetrieve", gCode);
+		return dto;
+	}
+
 }
