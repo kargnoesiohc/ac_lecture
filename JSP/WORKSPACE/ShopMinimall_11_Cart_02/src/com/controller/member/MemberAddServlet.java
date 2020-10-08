@@ -39,8 +39,8 @@ public class MemberAddServlet extends HttpServlet {
 		System.out.println(n+"개 레코드 추가");
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("memberAdd", "회원가입 성공");
-		response.sendRedirect("main.jsp");
+		session.setAttribute("str", "회원가입 성공");
+		response.sendRedirect("main");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

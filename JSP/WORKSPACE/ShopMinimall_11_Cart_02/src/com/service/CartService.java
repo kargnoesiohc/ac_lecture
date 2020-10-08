@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import com.config.MySqlSessionFactory;
 import com.dao.CartDAO;
 import com.dto.CartDTO;
+import com.dto.OrderDTO;
 
 public class CartService {
 	
@@ -81,6 +82,59 @@ public class CartService {
 		} finally {
 			// TODO: handle finally clause
 			session.close();
+		}
+		return n;
+	}
+
+	public int cartAllDel(List<String> list) {
+		// TODO Auto-generated method stub
+		SqlSession session = MySqlSessionFactory.getSession();
+		int n = 0;
+		try {
+			n = dao.cartAllDel(session, list);
+			if(n>0) {
+				session.commit();
+				System.out.println("장바구니 전체 삭제1 commit 성공");
+			}
+		} finally {
+			// TODO: handle finally clause
+			session.close();
+		}
+		return n;
+	}
+
+	public CartDTO cartByNum(int i) {
+		// TODO Auto-generated method stub
+		SqlSession session = MySqlSessionFactory.getSession();
+		CartDTO cDTO = null;
+		try {
+			cDTO = dao.cartByNum(session, i);
+		} finally {
+			// TODO: handle finally clause
+			session.close();
+		}
+		return cDTO;
+	}
+
+	public int orderDone(OrderDTO oDTO, int orderNum) {
+		// TODO Auto-generated method stub
+		System.out.println("service");
+		SqlSession session = MySqlSessionFactory.getSession();
+		int n = 0;
+		try {
+			n = dao.orderDone(session,oDTO); //order테이블에 추가
+			System.out.println("orderDone()");
+			n = dao.cartDel(session,orderNum);//cart에서 삭제
+			System.out.println("cartDel()");
+			session.commit();
+			System.out.println("commit()");
+		} catch (Exception e) {
+			// TODO: handle exception
+			session.rollback();
+			e.printStackTrace();
+		} finally {
+			session.close();
+			System.out.println("close()");
 		}
 		return n;
 	}

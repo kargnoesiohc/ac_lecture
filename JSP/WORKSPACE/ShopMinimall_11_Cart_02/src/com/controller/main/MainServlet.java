@@ -19,7 +19,8 @@ import com.service.GoodsService;
 @WebServlet("/main")
 public class MainServlet extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, 
+			HttpServletResponse response) throws ServletException, IOException {
 		GoodsService service = new GoodsService();
 		List<GoodsDTO> list = service.goodsList("top");
 			request.setAttribute("goodsList", list);
@@ -31,5 +32,4 @@ public class MainServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

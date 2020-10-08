@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.dto.CartDTO;
+import com.dto.OrderDTO;
 
 public class CartDAO {
 
@@ -31,5 +32,24 @@ public class CartDAO {
 		System.out.println(map);
 		return session.update("cartUpdate", map);
 	}
+
+	public int cartAllDel(SqlSession session, List<String> list) {
+		// TODO Auto-generated method stub
+		
+		return session.delete("cartAllDel", list);
+	}
+
+	public CartDTO cartByNum(SqlSession session, int i) {
+		// TODO Auto-generated method stub
+		CartDTO cDTO = session.selectOne("cartByNum",i);
+		return cDTO;
+	}
+
+	public int orderDone(SqlSession session, OrderDTO oDTO) {
+		// TODO Auto-generated method stub
+		
+		return session.insert("orderDone",oDTO);
+	}
+
 
 }

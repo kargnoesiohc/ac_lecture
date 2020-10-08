@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button>ajax</button>
+	<span></span>
+	<script type="text/javascript" src="../jquery-3.5.1.min.js"></script>
+	<script type="text/javascript">
+	
+	$("button").on("click", function () {
+		$.ajax({
+			type: "get",
+			dataType: "text",
+			url: "test3.jsp",
+			success: function (data, status, xhr) {
+				$("span").text(data);
+				console.log(data);
+			},
+			error: function(xhr, status, e) {
+				System.out.println(e);
+			}
+		});
+	})
+		
+	</script>
+</body>
+</html>

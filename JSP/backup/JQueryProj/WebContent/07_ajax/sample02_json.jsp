@@ -5,6 +5,6 @@
 	int age = 20;	
 %>
 {
-	"username":"<%= name %>",
-	"age":"<%=age %>",
+	"name":"<%=name %>",
+	"age":"<%=age %>"
 }

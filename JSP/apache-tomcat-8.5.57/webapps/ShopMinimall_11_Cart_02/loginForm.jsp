@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h1>로그인</h1>
+<hr/>
+<jsp:include page="/member/loginForm_stu.jsp"></jsp:include>
 </body>
 </html>
