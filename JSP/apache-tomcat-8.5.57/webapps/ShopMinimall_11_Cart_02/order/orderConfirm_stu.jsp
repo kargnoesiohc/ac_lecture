@@ -196,7 +196,7 @@ String gImage = cDTO.getgImage();
 		</tr>
 
 		<tr>
-			<td class="td_default"><input type="checkbox" name="same" id="same"> <label for="same">배송지가 동일할 경우 선택하세요.</label></td>
+			<td class="td_default"> <label><input type="checkbox" name="same" id="same"/>배송지가 동일할 경우 선택하세요.</label></td>
 		</tr>
 		<!--  배송지 정보 시작-->
 		<tr>
@@ -260,9 +260,9 @@ String gImage = cDTO.getgImage();
 				<table width="100%" cellspacing="0" cellpadding="0" border="1" style="border-collapse: collapse" bordercolor="#CCCCCC">
 					<tr>
 						<td width="125" height="35" class="td_default">
-							<input type="radio" name="payMethod" value="신용카드" checked>신용카드</input> 
-							<input type="radio" name="payMethod" value="계좌이체">계좌이체</input> 
-							<input type="radio" name="payMethod" value="무통장 입금">무통장 입금</input>
+							<label><input type="radio" name="payMethod" value="신용카드" checked/>신용카드</label>
+							<label><input type="radio" id="payMethod2" name="payMethod" value="계좌이체"/>계좌이체</label>
+							<label><input type="radio" id="payMethod3" name="payMethod" value="무통장입금"/>무통장 입금</label>
 						</td>
 					</tr>
 
@@ -286,6 +286,8 @@ String gImage = cDTO.getgImage();
 
 </form>
 
+
+<!-- 우편번호 찾기 -->
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
 	//본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.

@@ -13,6 +13,25 @@
              } else if ($("#passwd").val().length == 0 || $("#passwd2").val().length == 0){
                  event.preventDefault();
                  alert("비밀번호 입력 확인");
+             } else if($("#username").val().length == 0) {
+            	 event.preventDefault();
+            	 alert("이름 입력 확인");
+             } else if($("#postcode").val().length == 0) {
+            	 event.preventDefault();
+            	 alert("우편번호 입력 확인");
+             } else if($("#roadAddress").val().length == 0) {
+            	 event.preventDefault();
+            	 alert("도로명주소 입력 확인");
+             } else if($("#jibunAddress").val().length == 0) {
+            	 event.preventDefault();
+            	 alert("지번주소 입력 확인");
+             } else if($("#phone1").val().length == 0 && $("#phone2").val().length == 0 
+            		 && $("#phone3").val().length == 0 ) {
+            	 event.preventDefault();
+            	 alert("전화번호 입력 확인");
+             } else if($("#email1").val().length == 0 && $("#email2").val().length == 0) {
+            	 event.preventDefault();
+            	 alert("이메일 입력 확인");
              }
          });//end	
     	
@@ -59,21 +78,21 @@
 비빌번호확인:<input type="password" name="passwd2" id="passwd2"> <span id="passwd2Span"></span>
 <span id="result2"></span>
 <br> 
-이름:<input type="text" name="username"><br> 
-<input type="text" name="post" id="sample4_postcode" placeholder="우편번호">
+이름:<input type="text" name="username" id=username><br> 
+<input type="text" name="post" id="postcode" placeholder="우편번호">
 <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-<input type="text" name="addr1" id="sample4_roadAddress" placeholder="도로명주소">
-<input type="text" name="addr2" id="sample4_jibunAddress" placeholder="지번주소">
+<input type="text" name="addr1" id="roadAddress" placeholder="도로명주소">
+<input type="text" name="addr2" id="jibunAddress" placeholder="지번주소">
 <span id="guide" style="color:#999"></span>
 <br>
-전화번호:<select name="phone1">
+전화번호:<select name="phone1" id="phone1">
   <option value="010">010</option>
   <option value="011">011</option>
 </select>-
-<input type="text" name="phone2" >-<input type="text" name="phone3" >
+<input type="text" name="phone2" id="phone2">-<input type="text" name="phone3" id="phone3">
 <br>
-이메일:<input type="text" name="email1" >@
-       <input type="text" name="email2"  placeholder="직접입력">
+이메일:<input type="text" name="email1" id="email1">@
+       <input type="text" name="email2" id="email2"  placeholder="직접입력">
        <select id="email">
        	<option value="">직접 입력</option>
         <option value="daum.net">daum.net</option>

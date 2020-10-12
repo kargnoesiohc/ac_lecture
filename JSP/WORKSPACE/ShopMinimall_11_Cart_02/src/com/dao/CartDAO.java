@@ -12,8 +12,8 @@ public class CartDAO {
 
 	public int cartAdd(SqlSession session, CartDTO xxx) {
 		// TODO Auto-generated method stub
-		int n = session.insert("cartAdd", xxx);
-		return n;
+		
+		return session.insert("cartAdd", xxx);
 	}
 
 	public List<CartDTO> cartList(SqlSession session, String userid) {
@@ -21,7 +21,9 @@ public class CartDAO {
 		List<CartDTO> list = session.selectList("cartList", userid);
 		return list;
 	}
-
+	
+	
+	//개별 삭제
 	public int cartDel(SqlSession session, int num) {
 		// TODO Auto-generated method stub
 		return session.delete("cartDel", num);
@@ -33,9 +35,9 @@ public class CartDAO {
 		return session.update("cartUpdate", map);
 	}
 
+	//전체 삭제
 	public int cartAllDel(SqlSession session, List<String> list) {
 		// TODO Auto-generated method stub
-		
 		return session.delete("cartAllDel", list);
 	}
 
@@ -47,7 +49,6 @@ public class CartDAO {
 
 	public int orderDone(SqlSession session, OrderDTO oDTO) {
 		// TODO Auto-generated method stub
-		
 		return session.insert("orderDone",oDTO);
 	}
 

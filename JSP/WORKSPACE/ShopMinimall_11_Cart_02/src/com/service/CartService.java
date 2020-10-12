@@ -32,6 +32,7 @@ public class CartService {
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
+			session.rollback();
 		} finally {
 			session.close();
 		}
@@ -62,6 +63,10 @@ public class CartService {
 				session.commit();
 				System.out.println("장바구니 삭제 commit 성공");
 			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			session.rollback();
+			e.printStackTrace();
 		} finally {
 			// TODO: handle finally clause
 			session.close();
@@ -79,6 +84,10 @@ public class CartService {
 				session.commit();
 				System.out.println("장바구니 수량 수정 commit 성공");
 			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			session.rollback();
+			e.printStackTrace();
 		} finally {
 			// TODO: handle finally clause
 			session.close();
@@ -96,6 +105,10 @@ public class CartService {
 				session.commit();
 				System.out.println("장바구니 전체 삭제1 commit 성공");
 			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			session.rollback();
 		} finally {
 			// TODO: handle finally clause
 			session.close();
@@ -122,12 +135,14 @@ public class CartService {
 		SqlSession session = MySqlSessionFactory.getSession();
 		int n = 0;
 		try {
-			n = dao.orderDone(session,oDTO); //order테이블에 추가
+			n += dao.orderDone(session,oDTO); //order테이블에 추가
 			System.out.println("orderDone()");
-			n = dao.cartDel(session,orderNum);//cart에서 삭제
+			n += dao.cartDel(session,orderNum);//cart에서 삭제
 			System.out.println("cartDel()");
-			session.commit();
-			System.out.println("commit()");
+			if(n == 2) {
+				session.commit();
+				System.out.println("commit()");
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			session.rollback();

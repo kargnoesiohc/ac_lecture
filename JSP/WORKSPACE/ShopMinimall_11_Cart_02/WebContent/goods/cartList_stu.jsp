@@ -158,8 +158,7 @@
 			<td class="td_default" align="center" width="110"><%=gPrice %></td>
 			<td class="td_default" align="center" width="90">
 				<input class="input_default" type="text" name="cartAmount" id="cartAmount<%=num %>"
-				style="text-align: right" maxlength="3" size="2" value="<%=gAmount%>"></input>
-			</td>
+				style="text-align: right" maxlength="3" size="2" value="<%=gAmount%>"></input>			</td>
 			<td><input type="button" value="수정" class="updateBtn" data-xxx="<%=num%>" data-price="<%=gPrice%>"/></td>
 			<td class="td_default" align="center" width="80" style='padding-left: 5px'>
 			<span id="sum<%=num%>"><%=gPrice*gAmount %></span>
@@ -187,8 +186,8 @@
 	<tr>
 		<td align="center" colspan="5">
 		<a class="a_black" href="#" id="orderAllConfirm"> 선택 항목 주문하기 </a>&nbsp;&nbsp;&nbsp;&nbsp;
-		<a class="a_black" href="#" id="delAllCart1"> 선택 항목 삭제하기</a>&nbsp;&nbsp;&nbsp;&nbsp; 
-		<a class="a_black" href="#" id="delAllCart2"> 선택 항목 삭제하기</a>&nbsp;&nbsp;&nbsp;&nbsp; 
+		<a class="a_black" href="#" id="delAllCart1"> 선택 항목 삭제하기1</a>&nbsp;&nbsp;&nbsp;&nbsp; 
+		<a class="a_black" href="#" id="delAllCart2"> 선택 항목 삭제하기2</a>&nbsp;&nbsp;&nbsp;&nbsp; 
 		<a class="a_black" href="main"> 계속쇼핑하기 </a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 	</tr>
 	<tr>

@@ -24,6 +24,10 @@ public class MemberService {
 			if(n > 0) {
 				session.commit();
 			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			session.rollback();
+			e.printStackTrace();
 		} finally {
 			// TODO: handle finally clause
 			session.close();
@@ -86,6 +90,7 @@ public class MemberService {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
+			session.rollback();
 			e.printStackTrace();
 		} finally {
 			session.close();

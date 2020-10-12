@@ -11,7 +11,6 @@
    	
    </script>
     <% 
-    System.out.println(str);
     }
     session.removeAttribute("str");
     %>

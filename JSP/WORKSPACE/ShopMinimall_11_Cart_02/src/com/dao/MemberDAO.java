@@ -9,14 +9,13 @@ import com.dto.MemberDTO;
 public class MemberDAO {
 	
 	  public int memberAdd(SqlSession session,MemberDTO dto) {
-		
+		// TODO Auto-generated method stub
 		return session.insert("memberAdd", dto);
 	  }
 
 	public int idCheck(SqlSession session, String userid) {
 		// TODO Auto-generated method stub
 		int n = session.selectOne("idCheck", userid);
-		System.out.println(n);
 		return n;
 	}
 
@@ -34,7 +33,6 @@ public class MemberDAO {
 
 	public int memberUpdate(SqlSession session, MemberDTO dto2) {
 		// TODO Auto-generated method stub
-		
 		return session.update("memberUpdate", dto2);
 	}
 

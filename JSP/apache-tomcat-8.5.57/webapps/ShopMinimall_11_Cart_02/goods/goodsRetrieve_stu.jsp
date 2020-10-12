@@ -28,6 +28,7 @@
     			alert("사이즈를 선택하세요.");
     			event.preventDefault();
     		} else if($("#gColor").val() == "색상선택") {
+    			alert("색상을 선택하세요.");
     			event.preventDefault();
     		}
     		$("#goodRetrieveForm").attr("action","GoodsCartServlet");

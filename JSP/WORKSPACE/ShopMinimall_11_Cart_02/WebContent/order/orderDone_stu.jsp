@@ -74,7 +74,7 @@ $(document).ready(function(){
 				<tr>
 					<td class="td_default" height="35"> 주소</td>
 					<td class="td_default" height="35">(<%=post %>)<br>
-						&nbsp;<%=addr1 %><br><%=addr2 %>
+						<%=addr1 %>
 					</td>
 				</tr>
 				

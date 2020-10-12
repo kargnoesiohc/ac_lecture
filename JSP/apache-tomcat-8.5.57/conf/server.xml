@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\CSR\ac_lecture\JSP\apache-tomcat-8.5.57\webapps\ShopMinimall_11_CartList" path="/ShopMinimall_11_CartList" reloadable="true" source="org.eclipse.jst.jee.server:ShopMinimall_11_CartList"/><Context docBase="C:\CSR\ac_lecture\JSP\apache-tomcat-8.5.57\webapps\ShopMinimall_11_Cart_02" path="/ShopMinimall_11_Cart_02" reloadable="true" source="org.eclipse.jst.jee.server:ShopMinimall_11_Cart_02"/></Host>
+      <Context docBase="C:\CSR\ac_lecture\JSP\apache-tomcat-8.5.57\webapps\ShopMinimall_11_CartList" path="/ShopMinimall_11_CartList" reloadable="true" source="org.eclipse.jst.jee.server:ShopMinimall_11_CartList"/><Context docBase="C:\CSR\ac_lecture\JSP\apache-tomcat-8.5.57\webapps\ShopMinimall_11_Cart_02" path="/ShopMinimall_11_Cart_02" reloadable="true" source="org.eclipse.jst.jee.server:ShopMinimall_11_Cart_02"/><Context docBase="C:\CSR\ac_lecture\JSP\apache-tomcat-8.5.57\webapps\weatherAPI_test" path="/weatherAPI_test" reloadable="true" source="org.eclipse.jst.jee.server:weatherAPI_test"/></Host>
     </Engine>
   </Service>
 </Server>
