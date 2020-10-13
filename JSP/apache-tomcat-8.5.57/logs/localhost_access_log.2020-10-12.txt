@@ -274,3 +274,8 @@
 0:0:0:0:0:0:0:1 - - [12/Oct/2020:18:26:31 +0900] "GET /weatherAPI_test/MainServlet HTTP/1.1" 200 181
 127.0.0.1 - - [12/Oct/2020:18:27:34 +0900] "GET / HTTP/1.1" 200 11414
 0:0:0:0:0:0:0:1 - - [12/Oct/2020:18:27:35 +0900] "GET /weatherAPI_test/MainServlet HTTP/1.1" 200 181
+127.0.0.1 - - [12/Oct/2020:18:54:31 +0900] "GET / HTTP/1.1" 200 11414
+0:0:0:0:0:0:0:1 - - [12/Oct/2020:18:54:32 +0900] "GET /weatherAPI_test/MainServlet2 HTTP/1.1" 200 1051
+0:0:0:0:0:0:0:1 - - [12/Oct/2020:18:54:32 +0900] "GET /weatherAPI_test/js/jquery-3.5.1.min.js HTTP/1.1" 404 853
+0:0:0:0:0:0:0:1 - - [12/Oct/2020:18:55:27 +0900] "GET /weatherAPI_test/MainServlet2 HTTP/1.1" 200 1128
+0:0:0:0:0:0:0:1 - - [12/Oct/2020:18:55:27 +0900] "GET /weatherAPI_test/js/jquery-3.5.1.min.js HTTP/1.1" 200 89478
