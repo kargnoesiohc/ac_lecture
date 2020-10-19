@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="pet01" class="com.dto.CatDTO">
+		<constructor-arg name="catName" value="나비"></constructor-arg>
+		<constructor-arg name="catAge" value="3"></constructor-arg>
+	</bean>
+	
+	<bean id="firstStudent" class="com.dto.StudentDTO">
+		<constructor-arg name="name" value="홍길동"></constructor-arg> <!-- 기본 데이터 타입 또는 String인 경우 value -->
+		<constructor-arg name="age" value="20"></constructor-arg>
+		<constructor-arg name="cat" ref="pet01"></constructor-arg> <!-- 객체일 경우 ref(reference) -->
+	</bean> 
+</beans>

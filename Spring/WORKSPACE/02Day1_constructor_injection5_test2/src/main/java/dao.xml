@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="cat1" class="com.dto.CatDTO">
+		<constructor-arg name="catName" value="나비"/>
+	</bean>
+	<bean id="cat2" class="com.dto.CatDTO">
+		<constructor-arg name="catName" value="야옹이"/>
+	</bean>
+	<bean id="person1" class="com.dto.PersonDTO">
+		<constructor-arg name="name" value="유관순"/>
+		<constructor-arg name="age" value="20"/>
+		<constructor-arg name="gender" value="여자"/>
+		<constructor-arg name="cat" ref="cat1"/>
+	</bean>
+	<bean id="person2" class="com.dto.PersonDTO">
+		<constructor-arg name="name" value="홍길동"/>
+		<constructor-arg name="age" value="20"/>
+		<constructor-arg name="gender" value="남자"/>
+		<constructor-arg name="cat" ref="cat2"/>
+	</bean>
+</beans>

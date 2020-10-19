@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="firstStudent" class="com.dto.StudentDTO">
+		<constructor-arg name="name" value="홍길동"/>  <!-- 생성자를 통해 빈을 주입받는 경우 -->
+	</bean>
+	<bean class="com.dto.StudentDTO"></bean>
+</beans>
