@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="stu1" class="com.dto.StudentDTO" scope="prototype"/><!-- 하나의 Bean 정의에 대해 다수의 객체가 존재 할 수 있다. -->
+	<bean id="stu2" class="com.dto.StudentDTO" scope="singleton"/> <!-- 하나의 Bean 정의에 대해 Spring loC Container 내에 단 하나의 객체만 존재 -->
+	<bean id="scopeTest" class="com.dto.StudentDTO"/>
+	
+</beans>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="pet01" class="com.dto.Cat">
+   <property name="catName" value="나비" />
+   <property name="catAge" value="3" />
+  </bean>
+  <bean id="pet02" class="com.dto.Cat">
+   <property name="catName" value="하늘" />
+   <property name="catAge" value="2" />
+  </bean>
+  
+
+  <bean id="firstStudent" class="com.dto.Student">
+    <property name="name" value="홍길동"/>
+    <property name="age" value="20"/>
+    <property name="mapCat">
+      <map>
+        <entry key="one" value-ref="pet01" /><!-- key:"one"/value:"pet01-나비,3" -->
+        <entry key="two" >					 <!-- key:"two"/value:"pet02-하늘,2" -->
+          <ref bean="pet02"/>
+        </entry>
+      </map>
+    </property>
+  </bean>
+ 
+</beans>

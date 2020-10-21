@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="pet01" class="com.dto.CatDTO">
+		<property name="catName" value="나비"></property>
+		<property name="catAge" value="3"></property>
+	</bean>
+
+	<bean id="firstStudent" class="com.dto.StudentDTO"> <!-- 객체 생성 -->
+		<property name="name" value="홍길동"></property> <!-- setter를 사용하여 bean 설정 -->	
+		<property name="age" value="20"></property> <!-- setter를 사용하여 bean 설정 -->	
+		<property name="cat" ref="pet01"></property> <!-- setter를 사용하여 bean 설정 -->	
+		
+	</bean>
+</beans>

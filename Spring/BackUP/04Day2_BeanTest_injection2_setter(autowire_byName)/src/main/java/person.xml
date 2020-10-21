@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="cat" class="com.spring.Cat">
+		<property name="catName" value="치치"></property>
+		<property name="catAge" value="3"></property>
+	 </bean>
+	 <!-- Person클래스의 프로퍼티 이름과 동일한 빈(cat)을 찾아서 자동으로 프로퍼티로 등록 -->
+	 <bean id="onePerson" class="com.spring.Person" autowire="byName"> 
+	 	<property name="username" value="홍길동"></property>
+	 	<!-- cat은 자동주입 -->
+	 </bean>
+</beans>
