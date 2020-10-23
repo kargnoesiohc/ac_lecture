@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- jdbc.properties 등록 -->
+	<bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+		<property name="locations"><!-- placeholder => setMethod = location을 가지고 있음-->
+		<!-- 폴더 경로, 파일 이름 리스트로 생성 -->
+			<list>
+				<value>com/config/jdbc.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="xxx" class="com.dto.Student">
+		<property name="name" value="${jdbc.name}"></property>
+		<property name="age" value="${jdbc.age}"></property>
+	</bean>
+	
+
+</beans>
