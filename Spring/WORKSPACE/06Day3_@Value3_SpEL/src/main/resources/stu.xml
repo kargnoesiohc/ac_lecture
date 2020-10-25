@@ -9,7 +9,7 @@
 	<context:annotation-config/>
 	
 	<bean id="stu" class="com.dto.Student">
-		<property name="name" value="홍길동"></property>
+		<property name="name" value="강감찬"></property>
 		<property name="age" value="20"></property>
 	</bean>
 	
