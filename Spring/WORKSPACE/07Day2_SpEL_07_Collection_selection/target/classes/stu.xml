@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	<context:annotation-config/>
+	
+	<util:list id="xxx">
+		<bean id="s3" class="com.dto.Student" p:name="유관순" p:age="20" p:married="false" p:weight="60.3"/>
+		<bean id="s2" class="com.dto.Student" p:name="강감찬" p:age="25" p:married="false" p:weight="70.8"/>
+		<bean id="s1" class="com.dto.Student" p:name="홍길동" p:age="30" p:married="true" p:weight="45.3"/>
+		<bean id="s4" class="com.dto.Student" p:name="이순신" p:age="35" p:married="false" p:weight="55.5"/>
+	</util:list>	<!-- 빈을 4개 가진 list 생성  -->
+	
+	<bean id="list" class="com.dto.ListStudent">
+		<property name="list" value="#{xxx.?[age gt 25]}"></property>  <!-- gt = '<' / ge = '<=' -->
+	</bean>
+	<bean id="list2" class="com.dto.ListStudent">
+		<property name="list" value="#{xxx.?[age ge 25]}"></property>
+	</bean>
+</beans>

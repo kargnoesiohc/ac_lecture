@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<context:annotation-config/>
+	
+	<bean id="pet01" class="com.dto.Cat">
+		<property name="catName" value="치치"></property>
+		<property name="catAge" value="9"></property>
+	</bean>
+	
+	<bean id="firstStudent" class="com.dto.Student">
+		<property name="name" value="이순신"></property>
+		<property name="age" value="20"></property>
+		<property name="cat" value="#{pet01}"></property> <!-- #{}은 value 사용 -->
+	</bean>
+	
+	<bean id="stu" class="com.dto.Student">
+		<property name="name" value="홍길동"></property>
+		<property name="age" value="30"></property>
+		<property name="cat" ref="pet01"></property>
+	</bean>
+</beans>

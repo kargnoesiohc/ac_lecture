@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	<context:annotation-config/>
+	
+	<util:properties id="xxx" location="classpath:student.properties"/>
+	
+	<bean id="firstStudent" class="com.dto.Student">
+		<property name="name" value="#{xxx['stu.name'].toUpperCase()}"> </property> <!-- ${}를 쓰면 값을 가공 할 수 없음/ 변할 수 있는 값은 #{} 사용 -->
+		<property name="age" value="#{xxx['stu.age']}"></property>
+	</bean>
+	
+	<!-- <context:property-placeholder location="classpath:student.properties"/>
+	<bean id="firstStudent" class="com.dto.Student">
+		<property name="name" value="${stu.name}"></property> ${}를 쓰면 값을 가공 할 수 없음/ 변할 수 있는 값은 #{} 사용
+		<property name="age" value="${stu.age}"></property>
+	</bean> -->
+	
+	
+</beans>

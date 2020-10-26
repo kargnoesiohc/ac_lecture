@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<context:annotation-config/>
+	
+	<bean id="stu" class="com.dto.Student">
+		<property name="name" value="#{stu.xxx().toUpperCase()}"></property><!-- 함수 호출 가능 -->
+		<property name="age" value="20"></property>
+		<property name="ismarried" value="true"></property>
+		<property name="weight" value="87.4"></property>
+	</bean>
+	
+</beans>
