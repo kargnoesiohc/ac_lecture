@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	<context:component-scan base-package="com.*"/>
+	
+	<!-- aspect 설정 : advice를 어떤 pointcut에 적용할 지 설정 -->
+	<aop:config>
+		<aop:aspect id="getAspect" ref="aspect">
+			<!-- 공통 로직 함수에 pointcut 등록 -->
+			<aop:pointcut expression="execution(* get*(..))" id="publicMethod"/>
+			<!-- 수식어(public 리턴타입 * com..아래* 모든 클래스.*모든함수(..)매개변수 -->
+			<aop:before pointcut-ref="publicMethod" method="getBefore"/>
+			<!-- 실행 할 공통 로직 함수 등록 -->
+		</aop:aspect>
+			<aop:aspect id="mesgAspect" ref="aspect">
+			<!-- 공통 로직 함수에 pointcut 등록 -->
+			<aop:pointcut expression="execution(* mesg*(..))" id="publicMethod"/>
+			<!-- 수식어(public 리턴타입 * com..아래* 모든 클래스.*모든함수(..)매개변수 -->
+			<aop:after pointcut-ref="publicMethod" method="mesgAfter"/>
+			<!-- 실행 할 공통 로직 함수 등록 -->
+		</aop:aspect>
+	</aop:config>
+</beans>

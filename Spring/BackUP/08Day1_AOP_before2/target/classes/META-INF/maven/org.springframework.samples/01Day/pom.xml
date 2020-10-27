@@ -96,8 +96,17 @@
 			<artifactId>lombok</artifactId>
 			<version>1.18.16</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+		<!-- AOP 사용 DEPENCENCY -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.9.4</version>
+		</dependency>
 		<!-- 디펜던시 추가 부분 -->
 		<!-- jar 파일 추가 -->
+
+
 	</dependencies>
 	<build>
 		<plugins>
