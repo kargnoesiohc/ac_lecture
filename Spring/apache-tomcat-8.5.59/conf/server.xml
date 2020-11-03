@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      </Host>
+      <Context docBase="C:\CSR\ac_lecture\Spring\apache-tomcat-8.5.59\webapps\11Day1_mvc1" path="/aaa1" reloadable="true" source="org.eclipse.jst.jee.server:11Day1_mvc1"/><Context docBase="C:\CSR\ac_lecture\Spring\apache-tomcat-8.5.59\webapps\11Day1_mvc2" path="/aaa2" reloadable="true" source="org.eclipse.jst.jee.server:11Day1_mvc2"/><Context docBase="C:\CSR\ac_lecture\Spring\apache-tomcat-8.5.59\webapps\11Day1_InternalResourceViewResolver" path="/test1" reloadable="true" source="org.eclipse.jst.jee.server:11Day1_InternalResourceViewResolver"/><Context docBase="C:\CSR\ac_lecture\Spring\apache-tomcat-8.5.59\webapps\11Day1_MVC4_@RequestMapping_method" path="/mvc4" reloadable="true" source="org.eclipse.jst.jee.server:11Day1_MVC4_@RequestMapping_method"/><Context docBase="C:\CSR\ac_lecture\Spring\apache-tomcat-8.5.59\webapps\11Day1_MVC4_@RequestMapping2_param" path="/test2" reloadable="true" source="org.eclipse.jst.jee.server:11Day1_MVC4_@RequestMapping2_param"/><Context docBase="C:\CSR\ac_lecture\Spring\apache-tomcat-8.5.59\webapps\11Day1_MVC5_Test" path="/test" reloadable="true" source="org.eclipse.jst.jee.server:11Day1_MVC5_Test"/><Context docBase="C:\CSR\ac_lecture\Spring\apache-tomcat-8.5.59\webapps\11Day2_MVC_parameter" path="/aaa" reloadable="true" source="org.eclipse.jst.jee.server:11Day2_MVC_parameter"/></Host>
     </Engine>
   </Service>
 </Server>
