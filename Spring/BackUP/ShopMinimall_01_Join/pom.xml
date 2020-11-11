@@ -125,7 +125,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.7</version>
+			<version>4.13.1</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- 아파치 제공 컨넥션 연결, 관리해 주는 DataSource, db 4가지 정보 설정필요함 -->
