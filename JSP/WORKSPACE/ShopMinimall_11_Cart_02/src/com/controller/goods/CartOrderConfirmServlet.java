@@ -1,4 +1,4 @@
-package com.controller.goods;
+	package com.controller.goods;
 
 import java.io.IOException;
 
