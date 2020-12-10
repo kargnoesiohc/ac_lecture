@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//배열의 util 클래스
+var arr=["홍길동", "이순신","유관순"];
+//entries() ===> {key:value} 로 반환
+var x=arr.entries();
+console.log(x);
+for(var [key, v] of x){
+	console.log(key, v);//idx, data
+}
+
+//keys()
+var x2= arr.keys();
+console.log(x2);
+for (var key  of x2) {
+	console.log(key);
+}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

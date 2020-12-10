@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//resove, reject에 값을 전달, 하나의 파라미터만 사용
+function xxx(param) {
+	return  new Promise(function(resolve, reject) { 
+		console.log("1");
+		if(param=="ok"){
+			resolve();
+		}else{
+			reject();
+		}
+		console.log("2");
+	});
+}
+//var result= xxx("ok2");
+var result= xxx("ok");  //1,2,result, end , success 또는 fail 선택
+console.log(result);
+result.then(function() {
+	console.log("success");	
+}, function() {
+	console.log("fail");
+});
+//console.log(result);
+console.log("end");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

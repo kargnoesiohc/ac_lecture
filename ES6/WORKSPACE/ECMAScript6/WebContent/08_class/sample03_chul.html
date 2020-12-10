@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//자바스크립트 클래스 
+class Person{
+	//생성자 =>클래스 당 반드시 하나, 오버로딩안됨 , 이름은 반드시 constructor
+	constructor(name, age)//생성자
+	{
+		console.log("constructor========");
+		this.name= name;
+		this.age= age;
+	}
+/* 	constructor(name)//생성자는 반드시 하나만 있어야 함 
+	{
+		console.log("constructor========");
+		this.name= name;
+		
+	} */
+	set setName(name){
+		this.name= name;
+	}
+	get getName(){
+		return this.name;
+	}
+	set setAge(age){
+		this.age= age;
+	}
+	get getAge(){
+		return this.age;
+	}
+}
+//사용하려면 객체 생성
+var p1= new Person("홍길동", 44);
+/* p1.setName="홍길동";
+p1.setAge=20; */
+console.log(p1.getName);
+console.log(p1.getAge);
+
+var p2= new Person();//객체생성 가능 
+console.log(p2.getName);//undefined
+console.log(p2.getAge);//undefined
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

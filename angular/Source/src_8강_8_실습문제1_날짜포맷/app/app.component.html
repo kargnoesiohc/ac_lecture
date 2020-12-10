@@ -1,0 +1,8 @@
+<h1>{{title}}</h1>
+<ul>
+날짜입력<input placeholder="형식:202011010" type="text" [(ngModel)]="currentDate"/> 
+<!-- FromsModule import--> 
+<button (click)="handleEvent('-')">-포맷</button>
+<button (click)="handleEvent('/')">/포맷</button>
+현재날짜:{{currentDate|my:flag}}
+</ul>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+class Employee{
+	//generator함수 사용
+	*info(){
+		yield "hello";
+	}
+}
+let emp= new Employee();
+let gen= emp.info();
+console.log(gen.next());
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//상속 ===>
+class Employee{//생성자 작성, name, salary
+	constructor(name, sal)//생성자
+	{
+		console.log("부모생성자 =================");
+		this.name=name;
+		this.salary=sal;
+	}
+	setName(name){
+		this.name=name;
+	}
+	setSalary(sal){
+		this.salary= sal;
+	}
+	getName(){
+		return this.name;
+	}
+	getSalary(){
+		return this.salary;
+	}
+}//end Employee
+
+class Manager extends Employee{//생성자 작성 , name, salary, depart
+	constructor(name, sal, depart)
+	{
+		super(name, sal);//부모 생성자 명시적 호출 필수(생성자의 첫줄에 기입)
+		//super();//부모생성자 명시적 호출 필수 (생성자의 첫줄에 기입)
+		console.log("자식 생성자===============");
+		this.depart= depart;
+		
+	}
+	setDepart(depart){
+		this.depart= depart;
+	}
+	getDepart(){
+		return this.depart;
+	}
+}//end Mananger
+var man= new Manager("홍길동", 1000, "인사");//부모, 부모 ,자식 
+console.log(man.getName());
+console.log(man.getSalary());
+console.log(man.getDepart());
+</script>
+</head>
+<body>
+
+</body>
+</html>

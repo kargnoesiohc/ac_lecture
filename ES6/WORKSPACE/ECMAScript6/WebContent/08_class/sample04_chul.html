@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+//상속
+class Employee{//부모 클래스 name, salary 
+	setName(name){
+		this.name=name;
+	}
+	setSalary(salary){
+		this.salary= salary;
+	}
+	getName(){
+		return this.name;
+	}
+	getSalary(){
+		return this.salary;
+	}
+}// end Employee
+
+//상속
+class Manager extends Employee{//name, salary(부모) + depart
+	setDepart(depart){
+		this.depart= depart;
+	}
+	getDepart(){
+		return this.depart;
+	}
+}
+
+//사용하려면 객체 생성 후 사용
+var man= new Manager();//자식 생성
+man.setName("홍길동");//부모
+man.setSalary(1000);//부모
+man.setDepart("인사");//자식
+
+console.log(man.getName());
+console.log(man.getSalary());
+console.log(man.getDepart());
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

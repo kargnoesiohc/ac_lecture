@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//1.객체생성
+var map= new Map();
+//2. 정보보기
+console.log(map);
+
+//3.데이터 저장 .set()
+map.set("one",100);
+map.set(1, 200);
+map.set(false,300);
+
+//4.데이터출력 .get()
+console.log(map.get("one"));
+console.log(map.get(1));
+console.log(map.get(false));
+
+//5.has 메소드
+console.log(map.has("two"));//키값의 존재여부 검사 
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

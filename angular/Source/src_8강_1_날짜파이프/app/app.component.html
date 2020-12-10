@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+<h2>날짜포맷지정</h2>
+<ul>
+  <li>01:{{currentDate}}</li>
+  <li>02:{{currentDate|date}}</li>
+  <li>03:{{currentDate|date:"yy y"}}</li><!--년도 소문자 y사용-->
+  <li>04:{{currentDate|date:"MM M dd d"}}</li><!--월 대문자 사용-->
+  <li>05:{{currentDate|date:"y/MM/dd HH:mm:ss"}}</li><!--월 대문자 사용-->
+  <li>05:{{currentDate|date:"y년MM월dd일 HH시mm분ss"}}</li><!--월 대문자 사용-->
+
+</ul>

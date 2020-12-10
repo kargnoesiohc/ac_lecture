@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//1. 자바스크립트의 class
+class Person{
+	setName(name){
+		this.name= name;
+	}
+	getName(){
+		return this.name;
+	}
+	setAge(age){
+		this.age= age;
+	}
+	getAge(){
+		return this.age;
+	}	
+}
+//2.사용하려면 객체 생성
+var p1= new Person();//기본 생성자 호출 
+p1.setName("홍길동");
+p1.setAge(20);
+
+console.log(p1.getName());
+console.log(p1.getAge());
+
+p1.name="이순신";
+p1.age=44;
+console.log(p1.getName());
+console.log(p1.getAge());
+</script>
+</head>
+<body>
+
+</body>
+</html>

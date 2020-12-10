@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//iterable 객체가 아닌 json객체는for~ of 사용불가
+let b= {one:100, two:200};
+for ( let x in b) {
+	console.log("in", x);
+}
+for ( let x in b) {
+	console.log("in", b[x]);
+}
+/* for ( let x of b) {
+	console.log("in", x);
+}  */
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

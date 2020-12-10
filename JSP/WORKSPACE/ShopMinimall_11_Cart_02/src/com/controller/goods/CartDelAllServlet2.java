@@ -33,7 +33,7 @@ public class CartDelAllServlet2 extends HttpServlet {
 				int n = service.cartDel(Integer.parseInt(num[i]));
 					if(n>0) {
 						nextPage ="CartListServlet";
-					}	
+					}
 			}
 			
 		} else {

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//catch를 이용한 reject처리
+function xxx() {
+	return new Promise(function(resolve, reject) {
+		console.log("1");
+		reject();
+		console.log("2");
+	});
+}
+xxx().then(function() {
+	console.log("success");
+}).catch(function () {
+	console.log("fail");
+});
+console.log("end");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

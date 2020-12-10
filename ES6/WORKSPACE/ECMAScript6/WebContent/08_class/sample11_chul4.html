@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//then메소드의 체인  //의도와 다르게 reject시 두번째 then에서 success2 수행됨
+function xxx() {
+	return  new Promise(function(resolve, reject) { 
+		console.log("1");
+		//resolve();
+		reject();
+		console.log("2");
+	});
+}
+//var result= xxx("ok2");
+xxx().then(function() {
+	console.log("success1");
+}, function () {
+	console.log("fail2");
+	console.log("fail2"); //명시적 reject호출 하여 fail2 함수 호출
+}).then(function() {
+	console.log("success2");
+}, function() {
+	console.log("fail2");
+});
+
+console.log("end");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

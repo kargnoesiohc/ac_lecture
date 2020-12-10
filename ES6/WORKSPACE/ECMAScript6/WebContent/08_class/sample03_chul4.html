@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//자바스크립트 클래스 
+class Person{
+	//new.target 속성, new.target.name속성
+	//new.target은 constructor를 참조함
+	//new.target.name은 클래스의 이름
+	constructor(name, age)
+	{
+		console.log(new.target);
+		console.log("=============");
+		console.log(new.target.name);
+	}
+	 setName(name){
+		this.name= name;
+	}
+	 getName(){
+		return this.name;
+	}
+	 setAge(age){
+		this.age= age;
+	}
+	 getAge(){
+		return this.age;
+	}
+}
+//사용하려면 객체 생성
+var p1= new Person("홍길동", 20);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

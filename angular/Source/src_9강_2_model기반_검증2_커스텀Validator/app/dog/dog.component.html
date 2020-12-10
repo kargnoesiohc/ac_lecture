@@ -1,0 +1,24 @@
+<p>강아지 등록화면</p>
+<form (submit)="onSubmit()" [formGroup]="form"><!-- formGroup으로 묶기, ngSubmit주의-->
+    이름:<input type="text" name="name" id="name" formControlName="upperCase_2"><br>
+     나이:<input type="text" name="age" id="age" formControlName="requried_1"><br>
+     종류:
+     <select name="species" id="species">
+         <option>선택하세요</option>
+         <option>진도개</option>
+         <option>푸들</option>
+         <option>치와와</option>
+     </select><br>
+     friends:<input type="text" name="friends" id="friends" formControlName='eq5'>5입력<br>
+          <input type="submit" value="submit" [disabled]="form.invalid">
+</form>
+<h2>{{dog|json}}</h2>
+<p>1.form.valid: {{form.valid}}</p>
+<p>2.form.value: {{form.value|json}}</p>
+<p>폼 유효성 검증</p>
+<p>1.form.controls.required_1.value:{{form.controls.requried_1.value}}</p>
+<p>2.form.controls.required_1.valid:{{form.controls.requried_1.valid}}</p>
+<p>3.form.controls.upperCase_2.value:{{form.controls.upperCase_2.value}}</p>
+<p>4.form.controls.upperCase_2.valid:{{form.controls.upperCase_2.valid}}</p>
+<p>4.form.controls.eq5.value:{{form.controls.eq5.value}}</p>
+<p>4.form.controls.eq5.valid:{{form.controls.eq5.valid}}</p>

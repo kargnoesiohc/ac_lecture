@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//arr.findIndex(function ( [, obj]) {
+//배열요소의 index값 리턴
+var arr=[10,20,30,40,50];
+let xxx= arr.findIndex(function(ele, idx, all) {
+	console.log(ele, idx, all);
+	return ele==30;
+});
+console.log(xxx); //index값 2
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

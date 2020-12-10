@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//상속 ===>
+class Employee{
+	
+	//Manager 는 Employee를 상속, 생성자를 통해 depart,name, salary초기화, 
+	//getEmployee()오버라이딩 depart,name, salary 정보 리턴 
+	constructor(name, sal)
+	{
+		this.name=name;
+		this.salary=sal;
+	}
+	setName(name){
+		this.name=name;
+	}
+	setSalary(sal){
+		this.salary= sal;
+	}
+	getName(){
+		return this.name;
+	}
+	getSalary(){
+		return this.salary;
+	}
+	getEmployee(){
+		return this.name+"\t"+this.salary;
+	}
+}//end Employee
+
+class Manager extends Employee{
+	//static메소드
+	static getInfo(){
+		console.log(this); //클래스 자체
+		return "홍길동";
+	}
+	constructor(name, sal, depart)
+	{
+		super(name, sal);//필수
+console.log("==========");
+console.log(this); //생성된 인스턴스 
+		this.depart= depart;		
+	}
+	setDepart(depart){
+		this.depart= depart;
+	}
+	getDepart(){
+		return this.depart;
+	}
+	getEmployee(){
+		return this.name+"\t"+this.salary+ "\t"+this.depart;
+	}
+}//end Mananger
+console.log(Manager.getInfo()); //클래스명.메소드명으로 접근
+var man= new Manager("홍길동", 1000, "인사");
+console.log(man.getEmployee());//오버라이딩 메소드 호출 
+</script>
+</head>
+<body>
+
+</body>
+</html>

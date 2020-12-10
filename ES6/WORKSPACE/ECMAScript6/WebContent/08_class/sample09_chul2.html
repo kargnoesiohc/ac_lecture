@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//set : 순서존재, 중복 허용안함. 내부적으로 배열로 관리
+//1. 객체 생성
+var s= new Set();
+
+//2. 정보보기
+//console.log(s);
+s.add("one");
+s.add(100);
+s.add(false);
+console.log(s.size);
+
+//데이터 출력
+var data= s.values();
+console.log(data.next().value);
+console.log(data.next().value);
+console.log(data.next().value);
+
+console.log(s.has("one"));
+console.log(s.has("two"));
+console.log("=======");
+
+//keys() value값을 key로 반환
+data= s.keys();
+console.log(data.next().value);
+console.log(data.next());
+console.log(data.next());
+console.log("=============");
+
+
+
+
+//entries()
+data= s.entries();
+console.log(data.next().value); //["one", "one"]
+console.log(data.next()); 
+console.log(data.next()); 
+console.log("===============");
+
+//////////
+s.forEach(function(v, k, s) {
+	console.log(v, k, s); //value, value, set
+});
+//s.clear(), s.delete()
+console.log(s.delete("one"));
+console.log(s.size);
+s.clear();
+console.log(s.size);
+</script>
+</head>
+<body>
+
+</body>
+</html>

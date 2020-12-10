@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+//1. 첫번째 인자는 array-like 객체 또는 iterable 객체 지정
+let arr= Array.from('hello');
+console.log(arr, arr[0]);
+
+
+
+//2. 두번재 인자는 배열생성하면서 수행되는 함수 지정
+let arr2= Array.from("world", function(v) {
+	console.log(">>", v);	
+});
+
+
+//3.세번째 인자는 함수내에서 this사용시 참조할 객체 지정
+let arr3= Array.from("happy", function (v) {
+	console.log("**", v);
+	return v+ this.mesg; //this는 세번째 인자 
+}, {mesg:"값"});
+console.log(arr3);
+console.log( Array.isArray(arr3));//true
+
+//4. array-like 객체 지정
+let arr4= Array.from({0:100, 1:200, length:2});
+console.log(arr4, arr4[0], arr4[1],   arr4.length, Array.isArray(arr4));
+</script>
+</head>
+<body>
+
+</body>
+</html>

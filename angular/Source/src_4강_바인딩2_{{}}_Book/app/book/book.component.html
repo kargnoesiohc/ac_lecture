@@ -1,0 +1,7 @@
+<h1>{{getTileName()}} {{books.length}}권</h1>
+<ul>
+    <li *ngFor="let book of books"> <!--directive -->
+        <img src="../../assets/image/{{book.img}}" width="100" height="100"/>  <!--book주의-->
+        {{books.name}}
+    </li>  
+</ul>

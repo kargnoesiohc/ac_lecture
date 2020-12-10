@@ -1,0 +1,12 @@
+<app-stock-add (customEvent)="handleEvent($event)"></app-stock-add>
+<h1>주식 목록</h1>
+<table border="1">
+  <tr>
+    <th>주식명</th>
+    <th>주식가격</th>
+  </tr>
+  <tr *ngFor="let stock of stocks">
+    <td>{{stock.stockSymbol}}</td>
+    <td>{{stock.stockPrice}}</td>
+  </tr>
+</table>
